@@ -1,0 +1,19 @@
+highlighter: rouge
+permalink: none
+kramdown:
+  input: GFM
+  hard_wrap: false
+repository: elixir-lang/elixir-lang.github.com
+url: https://elixir-lang.org
+plugins:
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:year/:month/:day/:title/
