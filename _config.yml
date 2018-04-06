@@ -3,7 +3,6 @@ permalink: none
 kramdown:
   input: GFM
   hard_wrap: false
-repository: ProComPrag/babe_site.github.com
 baseurl: "/babe_site"
 url: "https://procomprag.github.io/babe_site"
 plugins:
@@ -11,10 +10,3 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-seo-tag
-defaults:
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: post
-      permalink: /blog/:year/:month/:day/:title/
