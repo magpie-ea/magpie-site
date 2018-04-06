@@ -4,7 +4,8 @@ kramdown:
   input: GFM
   hard_wrap: false
 repository: ProComPrag/babe_site.github.com
-url: "https://procomprag.github.io/babe_site/"
+baseurl: "/babe_site"
+url: "https://procomprag.github.io/babe_site"
 plugins:
   - jemoji
   - jekyll-sitemap
