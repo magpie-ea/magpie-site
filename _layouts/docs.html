@@ -46,12 +46,12 @@ section: docs
         {% if node.slug == page_slug %}
           <div class="pagination loop-pagination">
             {% unless forloop.first %}
-              <a href="babe_site/{{prev.slug}}.html" class="previous page-numbers spec" title="{{prev.title | escape}}">&larr; Previous</a>
+              <a href="{{prev.slug}}.html" class="previous page-numbers spec" title="{{prev.title | escape}}">&larr; Previous</a>
             {% endunless %}
               <a class="page-numbers spec" href="#container">Top</a>
             {% unless forloop.last %}
               {% assign next = guide.pages[forloop.index] %}
-              <a href="babe_site/{{next.slug}}.html" class="previous page-numbers spec" title="{{next.title | escape}}">Next &rarr;</a>
+              <a href="{{next.slug}}.html" class="previous page-numbers spec" title="{{next.title | escape}}">Next &rarr;</a>
             {% endunless %}
           </div>
         {% endif %}
