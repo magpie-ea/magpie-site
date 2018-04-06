@@ -3,8 +3,7 @@ permalink: none
 kramdown:
   input: GFM
   hard_wrap: false
-repository: elixir-lang/elixir-lang.github.com
-url: https://elixir-lang.org
+repository: ProComPrag/babe_site.github.com
 plugins:
   - jemoji
   - jekyll-sitemap
