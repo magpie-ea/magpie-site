@@ -13,7 +13,7 @@ section: docs
      <h3 class="widget-title">{{guide.title}}</h3>
       <ol>
         {% for node in guide.pages %}
-          <li><a class="spec" href="babe_site/{{guide.dir}}{{node.slug}}.html" title="{{node.title | escape}}">{{node.title}}</a></li>
+          <li><a class="spec" href="babe_site/{{node.slug}}.html" title="{{node.title | escape}}">{{node.title}}</a></li>
         {% endfor %}
       </ol>
     </div>
@@ -46,12 +46,12 @@ section: docs
         {% if node.slug == page_slug %}
           <div class="pagination loop-pagination">
             {% unless forloop.first %}
-              <a href="babe_site/{{guide.dir}}{{prev.slug}}.html" class="previous page-numbers spec" title="{{prev.title | escape}}">&larr; Previous</a>
+              <a href="babe_site/{{prev.slug}}.html" class="previous page-numbers spec" title="{{prev.title | escape}}">&larr; Previous</a>
             {% endunless %}
               <a class="page-numbers spec" href="#container">Top</a>
             {% unless forloop.last %}
               {% assign next = guide.pages[forloop.index] %}
-              <a href="babe_site/{{guide.dir}}{{next.slug}}.html" class="previous page-numbers spec" title="{{next.title | escape}}">Next &rarr;</a>
+              <a href="babe_site/{{next.slug}}.html" class="previous page-numbers spec" title="{{next.title | escape}}">Next &rarr;</a>
             {% endunless %}
           </div>
         {% endif %}
