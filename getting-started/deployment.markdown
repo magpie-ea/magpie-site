@@ -41,7 +41,7 @@ To deploy an experiment via Github Pages:
 <!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise Github Pages will not be able to serve the experiment correctly. -->
 
 #### Crowdsourcing (MTurk, Prolific) or direct link?
-You might post the experiment via [Amazon Mechanical Turk](https://www.mturk.com/), [Prolific](https://www.prolific.ac/), or by directly sending the link to the participants. Please change the `config/config_deploy.js` in the experiment directory accordingly:
+You might post the experiment via [Amazon Mechanical Turk](https://www.mturk.com/), [Prolific](https://www.prolific.ac/), or by directly sending the link to the participants. Please change the `config/config_deploy.js` in the experiment directory accordingly, and then push the changes via git:
 
 ```javascript
 var config_deploy = {
@@ -77,6 +77,9 @@ var config_deploy = {
 ```
 
 You can then run the experiment by opening `index.html` in the browser in your local machine, and invite participants to finish the experiment.
+
+(Of course, if the machine on which the experiment is run has internet connection, you can still specify `directLink` as the `deployMethod`, and the results will be submitted to the online server instead. This way you won't need to additionally run a local server.)
+
 ### Backend
 This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](https://b-a-b-e.github.io/babe_site/docs/deployment.html#local-server-deployment-instructions-with-docker) for detailed deployment instructions.
 
