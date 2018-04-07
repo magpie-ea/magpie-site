@@ -29,7 +29,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoeni
 
 1. Ensure that you have a [Heroku account](https://signup.heroku.com/) already, and have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and working on your computer.
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone this git repo with `git clone https://github.com/ProComPrag/ProComPrag.git` or `git clone git@github.com:ProComPrag/ProComPrag.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/b-a-b-e/ProComPrag.git` or `git clone git@github.com:b-a-b-e/ProComPrag.git`.
 
 3. `cd` into the project directory just cloned from your Terminal (or cmd.exe on Windows).
 
@@ -37,7 +37,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoeni
 
 5. Run `heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git`
 
-  (N.B.: Although the command line output tells you to run `git push heroku master`, don't do it yet.)
+    (N.B.: Although the command line output tells you to run `git push heroku master`, don't do it yet.)
 
 6. You may want to change the application name instead of using the default name. In that case, go to the Heroku Dashboard, find the newly created app, and edit the name in `Settings` panel.
 
@@ -51,7 +51,7 @@ heroku config:set POOL_SIZE=18
 
 9. Run `mix phx.gen.secret`. Then run `heroku config:set SECRET_KEY_BASE="OUTPUT"`, where `OUTPUT` should be the output of the `mix phx.gen.secret` step.
 
-  Note: If you don't have Phoenix framework installed on your computer, you may choose to use some other random generator for this task, which essentially asks for a random 64-character secret. On Mac and Linux, you may run `openssl rand -base64 64`. Or you may use an online password generator [such as the one offered by LastPass](https://lastpass.com/generatepassword.php).
+    Note: If you don't have Phoenix framework installed on your computer, you may choose to use some other random generator for this task, which essentially asks for a random 64-character secret. On Mac and Linux, you may run `openssl rand -base64 64`. Or you may use an online password generator [such as the one offered by LastPass](https://lastpass.com/generatepassword.php).
 
 10. Run `git add config/prod.exs`, then `git commit -m "Set app URL"`.
 
@@ -68,9 +68,9 @@ The following steps require an internet connection. After they are finished, the
 
 1. Install Docker from https://docs.docker.com/install/. You may have to launch the application once in order to let it install its command line tools. Ensure that it's running by typing `docker version` in a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows).
 
-  Note:
-  - Although the Docker app on Windows and Mac asks for login credentials to Docker Hub, they are not needed for local deployment . You can proceed without creating any Docker account/logging in.
-  - Linux users would need to install `docker-compose` separately. See relevant instructions at https://docs.docker.com/compose/install/.
+    Note:
+    - Although the Docker app on Windows and Mac asks for login credentials to Docker Hub, they are not needed for local deployment . You can proceed without creating any Docker account/logging in.
+    - Linux users would need to install `docker-compose` separately. See relevant instructions at https://docs.docker.com/compose/install/.
 
 2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone [the server repo](https://github.com/b-a-b-e/ProComPrag) with `git clone https://github.com/b-a-b-e/ProComPrag.git` or `git clone git@github.com:b-a-b-e/ProComPrag.git`.
 
@@ -91,6 +91,6 @@ After first-time installation, you can launch a local server instance which sets
 
 2. Visit localhost:4000 in your browser. You should see the server up and running.
 
-  Note: Windows 7 users who installed *Docker Machine* might need to find out the IP address used by `docker-machine` instead of `localhost`. See [Docker documentation](https://docs.docker.com/get-started/part2/#build-the-app) for details.
+    Note: Windows 7 users who installed *Docker Machine* might need to find out the IP address used by `docker-machine` instead of `localhost`. See [Docker documentation](https://docs.docker.com/get-started/part2/#build-the-app) for details.
 
 Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/procomprag-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.

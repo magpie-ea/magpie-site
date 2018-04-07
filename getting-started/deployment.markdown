@@ -58,7 +58,7 @@ Experiment results are submitted with [HTTP POST](https://en.wikipedia.org/wiki/
 
 The server provides an user interface to retrieve the experiment results in CSV format. You'll need to enter the `experiment-id` and `author` values that you specified in the `config/config_deploy.js` file.
 
-Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://github.com/b-a-b-e/ProComPrag#deployment-with-heroku).
+Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://b-a-b-e.github.io/babe_site/docs/deployment.html#online-server-deployment-instructions-with-heroku)
 
 Remember to change the submission URL in `scripts/submit_to_server.js` if you use your own server.
 
@@ -78,40 +78,7 @@ var config_deploy = {
 
 You can then run the experiment by opening `index.html` in the browser in your local machine, and invite participants to finish the experiment.
 ### Backend
-This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. The following are detailed instructions for the deployment.
-
-#### First-time installation (requires internet connection)
-
-The following steps require an internet connection. After they are finished, the server can be launched offline.
-
-1. Install Docker from https://docs.docker.com/install/. You may have to launch the application once in order to let it install its command line tools. Ensure that it's running by typing `docker version` in a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows).
-
-  Note:
-  - Although the Docker app on Windows and Mac asks for login credentials to Docker Hub, they are not needed for local deployment . You can proceed without creating any Docker account/logging in.
-  - Linux users would need to install `docker-compose` separately. See relevant instructions at https://docs.docker.com/compose/install/.
-
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone [the server repo](https://github.com/b-a-b-e/ProComPrag) with `git clone https://github.com/b-a-b-e/ProComPrag.git` or `git clone git@github.com:b-a-b-e/ProComPrag.git`.
-
-3. Open a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows), `cd` into the project directory just cloned via git.
-
-4. For the first-time setup, run in the terminal
-  ```
-  docker volume create --name procomprag-app-volume -d local
-  docker volume create --name procomprag-db-volume -d local
-  docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
-  ```
-
-#### Deployment
-
-After first-time installation, you can launch a local server instance which sets up the experiment in your browser and stores the results.
-
-1. Run `docker-compose up` to launch the application every time you want to run the server. Wait until the line `web_1  | [info] Running ProComPrag.Endpoint with Cowboy using http://0.0.0.0:4000` appears in the terminal.
-
-2. Visit localhost:4000 in your browser. You should see the server up and running.
-
-  Note: Windows 7 users who installed *Docker Machine* might need to find out the IP address used by `docker-machine` instead of `localhost`. See [Docker documentation](https://docs.docker.com/get-started/part2/#build-the-app) for details.
-
-Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/procomprag-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.
+This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](https://b-a-b-e.github.io/babe_site/docs/deployment.html#local-server-deployment-instructions-with-docker) for detailed deployment instructions.
 
 ## Debug
 With "Debug" deployment, no backend server will be used and no experiment results will be actually recorded. Instead, the results will be displayed directly on the webpage when the experiment is finished. This helps you debug the experiment and ensure that the experiment data is recorded as intended.
