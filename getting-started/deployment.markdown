@@ -8,24 +8,24 @@ section: start
 
 {% include toc.html %}
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [{{ page.title }}](#-pagetitle-)
+    - [Online](#online)
+        - [Frontend](#frontend)
+        - [Backend](#backend)
+    - [Local](#local)
+        - [Frontend](#frontend-1)
+        - [Backend](#backend-1)
+            - [First-time installation (requires internet connection)](#first-time-installation-requires-internet-connection)
+            - [Actual deployment](#actual-deployment)
+    - [Debug](#debug)
+
+<!-- markdown-toc end -->
+
+
 There are several ways in which experiments can be deployed.
-
-## Debug
-With "Debug" deployment, no backend server will be used and no experiment results will be actually recorded. Instead, the results will be displayed directly on the webpage when the experiment is finished. This helps you debug the experiment and ensure that the experiment data is recorded as intended.
-
-To set deployment mode to "Debug", simply set
-
-```javascript
-var config_deploy = {
-	...
-	"deployMethod" : 'debug',
-	...
-}
-```
-
-in the `config/config_deploy.js` file in your experiment directory.
-
-You can then test the experiment by opening `index.html` in the browser in your local machine.
 
 ## Online
 ### Frontend
@@ -56,15 +56,15 @@ Experiment results are submitted with [HTTP POST](https://en.wikipedia.org/wiki/
 
 The server provides an user interface to retrieve the experiment results in CSV format. You'll need to enter the `experiment-id` and `author` values that you specified in the `config/config_deploy.js` file.
 
-Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found at https://github.com/b-a-b-e/ProComPrag#deployment-with-heroku.
+Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://github.com/b-a-b-e/ProComPrag#deployment-with-heroku).
 
 Remember to change the submission URL in `scripts/submit_to_server.js` if you use your own server.
 
 ## Local
-Sometimes you may want to let the participants complete an experiment directly on a local machine which may not have internet connection. This is particularly useful for doing fieldwork or working in labs.
+Sometimes you may want to let the participants complete an experiment directly on a local machine without requiring internet connection. This is particularly useful for doing fieldwork or working in labs.
 
 ### Frontend
-The only change needed should be in the `config/config_deploy.js`
+The only change needed should be in `config/config_deploy.js`
 
 ```javascript
 var config_deploy = {
@@ -73,8 +73,10 @@ var config_deploy = {
 	...
 }
 ```
+
+You can then run the experiment by opening `index.html` in the browser in your local machine, and invite participants to finish the experiment.
 ### Backend
-This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used.
+This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. The following are detailed instructions for the deployment.
 
 #### First-time installation (requires internet connection)
 
@@ -96,6 +98,7 @@ The following steps require an internet connection. After they are finished, the
   docker volume create --name procomprag-db-volume -d local
   docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
   ```
+
 #### Actual deployment
 
 After first-time installation, you can launch a local server instance which sets up the experiment in your browser and stores the results.
@@ -104,6 +107,23 @@ After first-time installation, you can launch a local server instance which sets
 
 2. Visit localhost:4000 in your browser. You should see the server up and running.
 
-  Note: Windows 7 users who installed *Docker Machine* might need to find out the IP address used by `docker-machine` instead of `localhost`. See https://docs.docker.com/get-started/part2/#build-the-app for details.
+  Note: Windows 7 users who installed *Docker Machine* might need to find out the IP address used by `docker-machine` instead of `localhost`. See [Docker documentation](https://docs.docker.com/get-started/part2/#build-the-app) for details.
 
 Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/procomprag-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.
+
+## Debug
+With "Debug" deployment, no backend server will be used and no experiment results will be actually recorded. Instead, the results will be displayed directly on the webpage when the experiment is finished. This helps you debug the experiment and ensure that the experiment data is recorded as intended.
+
+To set deployment mode to "Debug", simply set
+
+```javascript
+var config_deploy = {
+	...
+	"deployMethod" : 'debug',
+	...
+}
+```
+
+in the `config/config_deploy.js` file in your experiment directory.
+
+You can then test the experiment by opening `index.html` in the browser in your local machine.
