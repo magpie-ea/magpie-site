@@ -1,7 +1,7 @@
 ---
 layout: getting-started
 title: Experiments
-	section: start
+section: start
 ---
 
 # {{ page.title }}
