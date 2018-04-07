@@ -1,6 +1,7 @@
 ---
 layout: getting-started
 title: Experiments
+	section: start
 ---
 
 # {{ page.title }}

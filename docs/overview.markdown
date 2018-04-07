@@ -2,6 +2,7 @@
 layout: docs
 title: Introduction
 redirect_from: /getting_started/1.html
+section: docs
 ---
 
 # {{ page.title }}

@@ -496,11 +496,10 @@ iframe.video { border:0; }
 #menu-primary ul li a:hover { color: #222; }
 
 body.home             div.menu li.home            a,
-body.install          div.menu li.install         a,
-body.getting-started  div.menu li.getting-started a,
-body.blog             div.menu li.blog            a,
+body.obtain           div.menu li.obtain          a,
+body.start            div.menu li.start           a,
 body.docs             div.menu li.docs            a,
-body.learning         div.menu li.learning        a {
+body.dev              div.menu li.dev             a {
   color: #aaa;
 }
 

@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Experiments
+section: docs
 ---
 
 # {{ page.title }}

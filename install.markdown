@@ -1,6 +1,6 @@
 ---
 title: "Installing babe"
-section: install
+section: obtain
 layout: default
 ---
 

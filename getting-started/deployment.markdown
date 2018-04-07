@@ -1,6 +1,7 @@
 ---
 layout: getting-started
 title: Deployment
+section: start
 ---
 
 # {{ page.title }}

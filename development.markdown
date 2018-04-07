@@ -1,6 +1,6 @@
 ---
 title: "Development"
-section: development
+section: dev
 layout: default
 ---
 

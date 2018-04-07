@@ -1,6 +1,7 @@
 ---
 layout: docs
 title: Deployment
+section: docs
 ---
 
 # {{ page.title }}
