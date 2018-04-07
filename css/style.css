@@ -171,7 +171,7 @@ dd { margin: 5px 0 0 1.5em }
 h1, h2, h3, h4, h5, h6 {
   font-style: normal;
   font-weight: normal;
-  margin: 0 0 15px 0;
+  margin: 0 0 3px 0;
   color: #333;
   line-height: 1.3em;
 }
@@ -574,7 +574,7 @@ body.dev              div.menu li.dev             a {
   margin: 0 0 20px 0;
   padding: 0 0 5px 0;
   font-size: 1em;
-  border-bottom: 1px solid #e5e5e5;
+  /* border-bottom: 1px solid #e5e5e5; */
 }
 .hentry:last-child {
   border-bottom: 0;
