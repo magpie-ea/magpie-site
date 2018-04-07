@@ -14,12 +14,13 @@ section: start
 - [{{ page.title }}](#-pagetitle-)
     - [Online](#online)
         - [Frontend](#frontend)
+            - [Crowdsourcing (MTurk, Prolific) or direct link?](#crowdsourcing-mturk-prolific-or-direct-link)
         - [Backend](#backend)
     - [Local](#local)
         - [Frontend](#frontend-1)
         - [Backend](#backend-1)
             - [First-time installation (requires internet connection)](#first-time-installation-requires-internet-connection)
-            - [Actual deployment](#actual-deployment)
+            - [Deployment](#deployment)
     - [Debug](#debug)
 
 <!-- markdown-toc end -->
@@ -39,6 +40,7 @@ To deploy an experiment via Github Pages:
 
 <!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise Github Pages will not be able to serve the experiment correctly. -->
 
+#### Crowdsourcing (MTurk, Prolific) or direct link?
 You might post the experiment via [Amazon Mechanical Turk](https://www.mturk.com/), [Prolific](https://www.prolific.ac/), or by directly sending the link to the participants. Please change the `config/config_deploy.js` in the experiment directory accordingly:
 
 ```javascript
@@ -99,7 +101,7 @@ The following steps require an internet connection. After they are finished, the
   docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
   ```
 
-#### Actual deployment
+#### Deployment
 
 After first-time installation, you can launch a local server instance which sets up the experiment in your browser and stores the results.
 
