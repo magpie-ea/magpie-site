@@ -23,4 +23,5 @@ p <- ggplot() +
   theme_blankcanvas(margin_cm = 0)
 
 show(p)
-ggsave("_babe_art.png", p, width = 20, height = 20, units = "cm")
+ggsave("logo.png", p, width = 20, height = 20, units = "cm")
+ggsave("logo_small.png", p, width = 10, height = 10, units = "cm")
