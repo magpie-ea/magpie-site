@@ -2,7 +2,7 @@
 
 Website with documentation for _babe (basic architecture for browser-based experiments). See the actual website here:
 
-https://b-a-b-e.github.io/babe_site/index.html
+https://babe-project.github.io/babe_site/index.html
 
 If you download and run this site locally, use:
 
