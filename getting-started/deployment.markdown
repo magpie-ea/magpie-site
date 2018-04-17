@@ -33,10 +33,10 @@ There are several ways in which experiments can be deployed.
 By default, _babe relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [BitBalloon](https://www.bitballoon.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
 
 To deploy an experiment via Github Pages:
-1. make sure that the experiment repo is already on Github, e.g. https://github.com/b-a-b-e/MinimalTemplate
-2. Go to "Settings" tab of the repo, e.g. https://github.com/b-a-b-e/MinimalTemplate/settings
+1. make sure that the experiment repo is already on Github, e.g. https://github.com/babe-project/MinimalTemplate
+2. Go to "Settings" tab of the repo, e.g. https://github.com/babe-project/MinimalTemplate/settings
 3. Scroll down to find the section titled "GitHub Pages". Under "Source", choose "master branch" and click on save.
-4. The experiment should now be available at your-account.github.io/ExperimentName, e.g. https://b-a-b-e.github.io/MinimalTemplate/
+4. The experiment should now be available at your-account.github.io/ExperimentName, e.g. https://babe-project.github.io/MinimalTemplate/
 
 <!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise Github Pages will not be able to serve the experiment correctly. -->
 
@@ -52,13 +52,13 @@ var config_deploy = {
 ```
 
 ### Backend
-After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _babe is at https://github.com/b-a-b-e/ProComPrag. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). It is deployed on Heroku at https://procomprag.herokuapp.com/.
+After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _babe is at https://github.com/babe-project/ProComPrag. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). It is deployed on Heroku at https://procomprag.herokuapp.com/.
 
 Experiment results are submitted with [HTTP POST](https://en.wikipedia.org/wiki/HTTP_POST) in [JSON format](https://en.wikipedia.org/wiki/JSON).
 
 The server provides an user interface to retrieve the experiment results in CSV format. You'll need to enter the `experiment-id` and `author` values that you specified in the `config/config_deploy.js` file.
 
-Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://b-a-b-e.github.io/babe_site/docs/deployment.html#online-server-deployment-instructions-with-heroku)
+Although you can use the default deployment on Heroku, you are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://babe-project.github.io/babe_site/docs/deployment.html#online-server-deployment-instructions-with-heroku)
 
 Remember to change the submission URL in `scripts/submit_to_server.js` if you use your own server.
 
@@ -81,7 +81,7 @@ You can then run the experiment by opening `index.html` in the browser in your l
 (Of course, if the machine on which the experiment is run has internet connection, you can still specify `directLink` as the `deployMethod`, and the results will be submitted to the online server instead. This way you won't need to additionally run a local server.)
 
 ### Backend
-This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](https://b-a-b-e.github.io/babe_site/docs/deployment.html#local-server-deployment-instructions-with-docker) for detailed deployment instructions.
+This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](https://babe-project.github.io/babe_site/docs/deployment.html#local-server-deployment-instructions-with-docker) for detailed deployment instructions.
 
 ## Debug
 With "Debug" deployment, no backend server will be used and no experiment results will be actually recorded. Instead, the results will be displayed directly on the webpage when the experiment is finished. This helps you debug the experiment and ensure that the experiment data is recorded as intended.

@@ -29,7 +29,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoeni
 
 1. Ensure that you have a [Heroku account](https://signup.heroku.com/) already, and have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and working on your computer.
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/b-a-b-e/ProComPrag.git` or `git clone git@github.com:b-a-b-e/ProComPrag.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/babe-project/ProComPrag.git` or `git clone git@github.com:babe-project/ProComPrag.git`.
 
 3. `cd` into the project directory just cloned from your Terminal (or cmd.exe on Windows).
 
@@ -72,7 +72,7 @@ The following steps require an internet connection. After they are finished, the
     - Although the Docker app on Windows and Mac asks for login credentials to Docker Hub, they are not needed for local deployment . You can proceed without creating any Docker account/logging in.
     - Linux users would need to install `docker-compose` separately. See relevant instructions at https://docs.docker.com/compose/install/.
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone [the server repo](https://github.com/b-a-b-e/ProComPrag) with `git clone https://github.com/b-a-b-e/ProComPrag.git` or `git clone git@github.com:b-a-b-e/ProComPrag.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone [the server repo](https://github.com/babe-project/ProComPrag) with `git clone https://github.com/babe-project/ProComPrag.git` or `git clone git@github.com:babe-project/ProComPrag.git`.
 
 3. Open a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows), `cd` into the project directory just cloned via git.
 
