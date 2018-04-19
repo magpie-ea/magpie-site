@@ -10,8 +10,8 @@ layout: default
 
 ### Download the Minimal Template
 
-Start your journey by downloading the [Minimal
-Template](https://github.com/babe-project/MinimalTemplate) using this link: 
+Start your journey by downloading the [minimal
+template](https://github.com/babe-project/MinimalTemplate) using this link: 
 
 [https://github.com/babe-project/MinimalTemplate/archive/master.zip](https://github.com/babe-project/MinimalTemplate/archive/master.zip)
 
@@ -20,7 +20,8 @@ repository from it.
 
 ### Other templates
 
-Presently, there is only one other template for a self-paced reading study, which you find and
-download here:
+Presently, there is only one other template, the [SPR
+template](https://github.com/babe-project/spr-template), for setting up self-paced reading
+experiments, which you can download here:
 
-[self-paced reading template](https://github.com/babe-project/spr-template)
+[https://github.com/babe-project/spr-template/archive/master.zip](https://github.com/babe-project/spr-template/archive/master.zip)
