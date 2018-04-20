@@ -1,5 +1,5 @@
 ---
-title: "Installing babe"
+title: "Obtaining _babe"
 section: obtain
 layout: default
 ---
@@ -7,6 +7,11 @@ layout: default
 # {{ page.title }}
 
 {% include toc.html %}
+
+Programming a browser-based experiment using _babe does not require installation of any additional software beyond a recent browser. You only need to download either the [minimal
+template](https://github.com/babe-project/MinimalTemplate), or any other template or example provided and start modifying it. Read the <a href="/babe_site/getting-started/introduction.html">getting started guide</a> to find out how.
+
+If you want to use the _babe server app to run locally on your machine (so that you can submit data to a local data base without requiring an internet connection), you should follow the detailed [installation instructions in the docs](docs/deployment.html#online-server-deployment-instructions-with-heroku).
 
 ### Download the Minimal Template
 
