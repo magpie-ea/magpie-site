@@ -6,30 +6,16 @@ section: start
 
 # {{ page.title }}
 
-{% include toc.html %}
-
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [{{ page.title }}](#-pagetitle-)
-    - [Online](#online)
-        - [Frontend](#frontend)
-            - [Crowdsourcing (MTurk, Prolific) or direct link?](#crowdsourcing-mturk-prolific-or-direct-link)
-        - [Backend](#backend)
-    - [Local](#local)
-        - [Frontend](#frontend-1)
-        - [Backend](#backend-1)
-            - [First-time installation (requires internet connection)](#first-time-installation-requires-internet-connection)
-            - [Deployment](#deployment)
-    - [Debug](#debug)
-
-<!-- markdown-toc end -->
-
-
 There are several ways in which experiments can be deployed.
 
+{% include toc.html %}
+
+
+
 ## Online
+
 ### Frontend
+
 By default, _babe relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [BitBalloon](https://www.bitballoon.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
 
 To deploy an experiment via Github Pages:

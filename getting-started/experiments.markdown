@@ -6,9 +6,11 @@ section: start
 
 # {{ page.title }}
 
+This guide walks through the minimal template, which you can [obtain here](../obtain.html), so that you can use it as a starting point of your own experiments. A full and extensive documentation is in the [docs](../docs/experiments.html).
+
 {% include toc.html %}
 
-This guide walks through the minimal template, which you can [obtain here](../obtain.html), so that you can use it as a starting point of your own experiments. A full and extensive documentation is in the [docs](../docs/experiments.html).
+
 
 ## File structure
 
@@ -97,7 +99,7 @@ Second, there is `exp.views` which is just an array of names of views that are d
 
 There are two more ingredients in the code above. `exp.trial_data` is just initialized here. It will later collect all data that is recorded repeatedly in different trials (e.g., responses, reaction times, etc.). The function `exp.initializeProcedure()` provides basic functionality and need usually not be tinkered with.
 
-#### `exp.trial_info`
+### `exp.trial_info`
 
 - how to load data
 - how to randomize
@@ -106,7 +108,9 @@ There are two more ingredients in the code above. `exp.trial_data` is just initi
 
 ## Views
 
-bla
+
+
+<img src="../images/view_schema.png" width="100%" >
 
 ## Config
 

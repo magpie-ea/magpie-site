@@ -6,8 +6,6 @@ layout: default
 
 # {{ page.title }}
 
-{% include toc.html %}
-
 Programming a browser-based experiment using _babe does not require installation of any additional software beyond a recent browser. You only need to download either the [minimal
 template](https://github.com/babe-project/MinimalTemplate), or any other template or example provided and start modifying it. Read the <a href="/babe_site/getting-started/introduction.html">getting started guide</a> to find out how.
 

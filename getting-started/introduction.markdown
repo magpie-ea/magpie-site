@@ -7,8 +7,6 @@ section: start
 
 # {{ page.title }}
 
-{% include toc.html %}
-
 There are two aspects to the use of _babe which are rather independent. The first is <a href = "/babe_site/getting-started/experiments.html">designing experiments</a>. The second is <a href = "/babe_site/getting-started/deployment.html">deployment</a>, i.e., how to get data from your experiments, either for debugging or for the real adventure with actual participants. This getting-started guide devotes one section to each aspect. Read on to learn about why we did things the way we did and about where to learn some basics that might be handy.
 
 ## Philosophy

@@ -6,21 +6,14 @@ section: docs
 
 # {{ page.title }}
 
-{% include toc.html %}
-
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [{{ page.title }}](#-pagetitle-)
-- [Online server deployment instructions with Heroku](#online-server-deployment-instructions-with-heroku)
-- [Local server deployment instructions with Docker](#local-server-deployment-instructions-with-docker)
-    - [First-time installation (requires internet connection)](#first-time-installation-requires-internet-connection)
-    - [Deployment](#deployment)
-
-<!-- markdown-toc end -->
 This page contains detailed deployment instructions.
 
-# Online server deployment instructions with Heroku
+{% include toc.html %}
+
+
+
+## Online server deployment instructions with Heroku
+
 [Heroku](https://www.heroku.com/) makes it easy to deploy an web app without having to manually manage the infrastructure. It has a free starter tier, which should be sufficient for the purpose of running experiments.
 
 There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoenix framework on deploying on Heroku. The deployment procedure is based on this guide, but differs in some places.
@@ -61,8 +54,9 @@ heroku config:set POOL_SIZE=18
 
 13. Now, `heroku open` should open the frontpage of the app.
 
-# Local server deployment instructions with Docker
-## First-time installation (requires internet connection)
+## Local server deployment instructions with Docker
+
+### First-time installation (requires internet connection)
 
 The following steps require an internet connection. After they are finished, the server can be launched offline.
 
@@ -83,7 +77,7 @@ The following steps require an internet connection. After they are finished, the
   docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
   ```
 
-## Deployment
+### Deployment
 
 After first-time installation, you can launch a local server instance which sets up the experiment in your browser and stores the results.
 
