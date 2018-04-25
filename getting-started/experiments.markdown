@@ -81,9 +81,9 @@ exp.customize = function() {
                      thanks];
 
     // prepare information about trials (procedure)
-	// randomize main trial order, but keep practice trial order fixed
+    // randomize main trial order, but keep practice trial order fixed
     this.trial_info.main_trials = _.shuffle(main_trials)
-	this.trial_info.practice_trials = practice_trials
+    this.trial_info.practice_trials = practice_trials
 	
 };
 ```
@@ -107,11 +107,16 @@ var main_trials = [
 ];
 ```
 
-This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. Normally, we would like to randomize trial order in some way or other. This is what happens inside of `exp.customize()`: the main trials are presented in a random order each time the experiment is started anew.
+This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like this template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file. This is documented here. (TO BE WRITTEN SOON.)
 
-If your experiment contains several different types of trials, we recommend supplying their information in separate files, like this template does for practice trials and main trials.
+Normally, we would like to randomize trial order in some way or other. This is what happens inside of `exp.customize()`, where we have:
 
-There is also the possibility to load trial information from a CSV file. This is documented here. (TO BE WRITTEN SOON.)
+```javascript
+this.trial_info.main_trials = _.shuffle(main_trials)
+```
+
+In this way, the main trials are presented in a random order each time the experiment is started anew. The function `_.shuffle()` takes an array as input and returns a shuffled copy of that array. This function comes from the [lodash](https://lodash.com/) library, which is loaded by default. [lodash](https://lodash.com/) provides a number of useful convenience functions.
+
 
 ## Views
 
