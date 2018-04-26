@@ -26,8 +26,8 @@ The minimal template contains the following files, of which the ones marked with
 	+ `submit_to_server.js` - functions to process, send or store data; user will almost never edit this
 + `images`       - images shown in this experiment (optional)
 + **->`trial_info/`**
-	+ `trials.js` - external information for main trials
-	+ `practiceTrials.js` - external information for practice trials
+	+ `main_trials.js` - external information for main trials
+	+ `practice_trials.js` - external information for practice trials
 + `styles/styles.css`  - style files
 + `libraries`    - external libraries
 
