@@ -120,13 +120,121 @@ In this way, the main trials are presented in a random order each time the exper
 
 ## Views
 
+Views correspond to the larger coherent chunks of the experiment, e.g., an instructions screen or blocks of practice or main trials. Conceptually, a view is a pair that consists of a view-template (defined in `index.html`) and a view-object (defined in `views/views.js`).
 
 <img src="../images/view_schema.png" width="100%" >
 
+The view-template in `index.html` essentially declares placeholders which are then filled by the corresponding view-object. Placeholders are declared and filled using [mustache](https://mustache.github.io/). Below is the view-template for the main experimental trials from the minimal template, which declares mustache-variables `picture`, `question`, `option1` and `option2`. These variables will be filled in a dynamic way with information by the corresponding view-object.
+
+```html
+{% raw %}
+<!-- main view (buttons response) -->
+<script id="main-view" type="x-tmpl-mustache">
+  <div class="view">
+  <div class="progress-bar-container">
+	<p>progress</p>
+	<div class="progress-bar"><span id='filled'><span></div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="picture", align = "center">
+    <img src={{picture}} alt="a picture" height="100" width="100">
+  </div>
+
+  <p class="question">
+    {{# question }}
+	  {{{ question }}}
+    {{/ question }} 
+  </p>
+
+  <p class="answer-container">
+	<label for="yes" class="button-answer">{{ option1 }}</label>
+	<input type="radio" name="answer" id="yes" value={{ option1 }} />
+	<input type="radio" name="answer" id="no" value={{ option2 }} />
+	<label for="no" class="button-answer">{{option2}}</label>
+  </p>
+
+  </div>
+</script>
+{% endraw %}
+```
+
+A view-object has two mandatory elements. First, `trials` contains the number of trials with which a view should be repeated. Second, it must contain a `render()` function which, most importantly, fills the mustache variables with content. The `render()` function could also, if relevant, record data or define input dependent reactions. The view-object of the main view in the minimal template (shown below) does record data, for example by storing it in `exp.trial_data` upon a button click. It also fills the relevant mustache-variables with information from `exp.trial_info`, updates a progress bar and records the starting time of the trial (so that it can calculate reaction times). Finally, the `render()` function receives information about the current trial `CT`, so that it can use this information to retrieve the relevant trial information from `exp.trial_info`.
+
+```javascript
+var main = {
+    
+    trials : 2,
+    
+    render : function(CT) {
+        
+        // fill variables in view-template
+        var viewTemplate = $('#main-view').html();
+        $('#main').html(Mustache.render(viewTemplate, {
+            question: exp.trial_info.main_trials[CT].question,
+            option1:  exp.trial_info.main_trials[CT].option1,
+            option2:  exp.trial_info.main_trials[CT].option2,
+            picture:  exp.trial_info.main_trials[CT].picture
+        }));
+        
+        // update the progress bar
+        var filled = CT * (180 / exp.views_seq[exp.currentViewCounter].trials);
+        $('#filled').css('width', filled);
+
+        // event listener for buttons; when an input is selected, the response
+        // and additional information are stored in exp.trial_info
+        $('input[name=answer]').on('change', function() {
+            RT = Date.now() - startingTime; // measure RT before anything else
+            trial_data = {
+                trial_type: "mainForcedChoice",
+                trial_number: CT+1,
+                question: exp.trial_info.main_trials[CT].question,
+                option1:  exp.trial_info.main_trials[CT].option1,
+                option2:  exp.trial_info.main_trials[CT].option2,
+                option_chosen: $('input[name=answer]:checked').val(),
+                RT: RT
+            };
+            exp.trial_data.push(trial_data);
+            exp.findNextView();
+        });
+        
+        // record trial starting time
+        startingTime = Date.now();
+        
+    }
+};
+```
+
 ## Config
 
-bla bla
+The user is free to add global config information in a file like `config/config_general.js`. Some templates do (like the SRP template (documentation pending)), but the minimal template does not. 
+
+Every experiment needs information about **deployment**. Deployment is the way in which the experiment is realized and its collected data is processed. The user would normally only interact with the deployment configuration in file `config/config_deployment.js` by choosing one of the specified options as a string value for `deploymentMethod`, see code below: 
+
+```javascript
+var config_deploy = {
+    
+    // obligatory fields
+	
+    // needed to recover data from server app
+    "author": "RandomJane",
+    // needed to recover data from server app
+    "experiment_id": "MinimalTemplateDEMO", 
+    "description": "A minimal template for a browser-based experiment",
+
+    // set deployment method; use one of:
+    //'debug', 'localServer', 'MTurk', 
+    // 'MTurkSandbox', 'Prolific', 'directLink'
+    "deployMethod" : "debug", 
+    
+    // optional fields
+    
+    // who to contact in case of trouble
+    "contact_email": "YOUREMAIL@wherelifeisgreat.you", 
+};
+```
+
+For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is described in the [docs](../docs/) (TO BE ADDED SOON).
 
 ## Canvas
 
-TO BE INCLUDED SOON
+DOCUMENTATION TO BE INCLUDED SOON
