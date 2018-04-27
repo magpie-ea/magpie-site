@@ -4,14 +4,14 @@
     - title: Introduction
       slug: introduction
 
-    - title: Minimal template
-      slug: minimal
+    - title: Templates
+      slug: templates
 
-    - title: Responses Types Template
-      slug: responses
+    - title: Full examples
+      slug: examples
 
-    - title: Self-Paced Reading Template
-      slug: sprTemplate
+    - title: Tricks & hacks
+      slug: tricks
 
 
 
