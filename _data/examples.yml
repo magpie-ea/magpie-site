@@ -1,5 +1,5 @@
-- title: Examples
-  dir: /examples/
+- title: Reuse
+  dir: /reuse/
   pages:
     - title: Introduction
       slug: introduction
@@ -7,10 +7,10 @@
     - title: Templates
       slug: templates
 
-    - title: Full examples
+    - title: Examples
       slug: examples
 
-    - title: Tricks & hacks
+    - title: Tricks
       slug: tricks
 
 
