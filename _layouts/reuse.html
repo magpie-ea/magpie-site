@@ -1,5 +1,5 @@
 ---
-section: examples
+section: reuse
 ---
 
 {% include top.html %}
@@ -7,8 +7,8 @@ section: examples
 <div id="sidebar-primary" class="sidebar">
   {% include search.html %}
 
-  {% assign guides = site.data.examples  %}
-  {% for guide in site.data.examples %}
+  {% assign guides = site.data.reuse  %}
+  {% for guide in site.data.reuse %}
     <div class="widget">
      <h3 class="widget-title">{{guide.title}}</h3>
       <ol>
@@ -39,8 +39,8 @@ section: examples
   {% assign guide_base_url = page.url | replace: file_name %}
   {% assign page_slug = file_name | replace: '.html' %}
 
-  {% assign guides = site.data.examples  %}
-  {% for guide in site.data.examples %}
+  {% assign guides = site.data.reuse  %}
+  {% for guide in site.data.reuse %}
     {% if guide.dir == guide_base_url %}
       {% for node in guide.pages %}
         {% if node.slug == page_slug %}

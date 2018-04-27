@@ -6,4 +6,6 @@ section: reuse
 
 # {{ page.title }}
 
-Here are a bunch of examples and templates.
+Here are a bunch of templates.
+
+{% include_relative templates/minimal.markdown}
