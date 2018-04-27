@@ -8,4 +8,11 @@ section: reuse
 
 Here are a bunch of templates.
 
-{% include_relative templates/minimal.markdown}
+
+{% for guide in site.data.reuse %}
+{% for node in guide.templates %}
+{% include_relative templates/{{node.slug}}.md %}
+{% endfor %}
+{% endfor %}
+
+

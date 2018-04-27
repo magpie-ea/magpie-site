@@ -12,6 +12,12 @@
 
     - title: Tricks
       slug: tricks
+  templates:
+    - title: Minimal template
+      slug: minimal
 
+    - title: Response types
+      slug: responseTypes
 
-
+    - title: Self-paced reading
+      slug: spr
