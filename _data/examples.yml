@@ -1,0 +1,17 @@
+- title: Examples
+  dir: /examples/
+  pages:
+    - title: Introduction
+      slug: introduction
+
+    - title: Minimal template
+      slug: minimal
+
+    - title: Responses Types Template
+      slug: responses
+
+    - title: Self-Paced Reading Template
+      slug: sprTemplate
+
+
+
