@@ -21,3 +21,13 @@
 
     - title: Self-paced reading
       slug: spr
+  examples:
+    - title: Mental Chronometry
+      slug: MentalChronometry
+
+    - title: Serial Exhaustive Search
+      slug: SerialExhaustiveSearch
+  tricks:
+    - title: Trial info from CSV-files
+      slug: trialInfoCSV
+

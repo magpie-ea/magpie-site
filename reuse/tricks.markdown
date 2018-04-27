@@ -6,4 +6,11 @@ section: reuse
 
 # {{ page.title }}
 
-Here are a bunch of examples and templates.
+Here is a bunch of tricks.
+
+
+{% for guide in site.data.reuse %}
+{% for node in guide.tricks %}
+{% include_relative tricks/{{node.slug}}.md %}
+{% endfor %}
+{% endfor %}

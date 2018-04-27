@@ -1,0 +1,3 @@
+## How to supply trial information as a CSV-file
+
+... fill me ... 

@@ -6,7 +6,7 @@ section: reuse
 
 # {{ page.title }}
 
-Here are a bunch of templates.
+Here is a bunch of templates.
 
 
 {% for guide in site.data.reuse %}
