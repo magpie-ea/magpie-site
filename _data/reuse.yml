@@ -27,6 +27,9 @@
 
     - title: Serial Exhaustive Search
       slug: SerialExhaustiveSearch
+
+    - title: Feature Integration
+      slug: FeatureIntegration
   tricks:
     - title: Trial info from CSV-files
       slug: trialInfoCSV
