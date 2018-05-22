@@ -11,7 +11,7 @@ There are two aspects to the use of _babe which are rather independent. The firs
 
 ## Philosophy
 
-_babe offers ready-made but customizable functions for the deployment process, because this is a fairly stable and recurrent process no matter what your experiment looks like. Most users will not want to be bothered with these details and so _babe does not bother you looking behind the curtain (even though you may of course). For the realization of experiments, _babe gives you a conceptual framework, some convenience functions and many examples, so as to leave you all the freedom to realize whatever your research goal demands.
+_babe offers ready-made but customizable functions for the deployment process, because this is a fairly stable and recurrent process no matter what your experiment looks like. Most users will not want to be bothered with these details and so _babe does not require you to look behind the curtains (even though you may of course). For the realization of experiments, _babe gives you a conceptual framework, some convenience functions and many examples, so as to leave you all the freedom to realize whatever your research goal demands.
 
 ## Useful resources
 

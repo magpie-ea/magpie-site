@@ -57,7 +57,7 @@ This file structure is only a suggestion. Whatever you choose to use, make sure 
 
 The main work behind the scenes takes place in the interaction between `scripts/experiment.js` and `scripts/main.js`. The latter shields off convenience functions from the user who does not wish to be bothered (such as rearranging data for submission, finding the next trial/view based on the user's specifications etc.). To customize an experiment, editing `scripts/experiment.js` is necessary, however.
 
-What `script/experiment.js` contributes is the `customize()` function for the `exp`-object. The `exp`-object is the main object that contains all information about how to realize your experiment. It is created automatically in `scripts/main.js`. It collects the data and finally submits it (using function `exp.submit()`;see below). Think of it as an entity which reads information about your trials (e.g., stored in a separate file like `trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
+What `script/experiment.js` contributes is the `customize()` function for the `exp`-object. The `exp`-object is the main object that contains all information about how to realize your experiment. It is created automatically in `scripts/main.js`. It collects the data and finally submits it (using function `exp.submit()`; see below). Think of it as an entity which reads information about your trials (e.g., stored in a separate file like `trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
 
 <img src="../images/exp_schema.png" width="100%" >
 
@@ -88,7 +88,7 @@ exp.customize = function() {
 };
 ```
 
-Second, there is `exp.views_seq` which is just an array of names of views that are defined in `views/views.js`. Views regulate all visuals and functionality and will be discussed at length below. The order of views in the `exp.views_seq` array defines the basic structure of the experiment. You can have a single view occur several times in this sequence. Third, there is `exp.trial_info` which contains all the information necessary to realize particular views, usually your main trials, giving specific information about which items participants see when. We will look into `exp.trial_info`.
+Second, there is `exp.views_seq` which is just an array of names of views that are defined in `views/views.js`. Views regulate all visuals and functionality and will be discussed at length below. The order of views in the `exp.views_seq` array defines the basic structure of the experiment. You can have a single view occur several times in this sequence. Third, there is `exp.trial_info` which contains all the information necessary to realize particular views, usually your main trials, giving specific information about which items participants see when. We will look into `exp.trial_info` in more depth next.
 
 ### Trial information & randomization
 
@@ -124,7 +124,7 @@ Views correspond to the larger coherent chunks of the experiment, e.g., an instr
 
 <img src="../images/view_schema.png" width="100%" >
 
-The view-template in `index.html` essentially declares placeholders which are then filled by the corresponding view-object. Placeholders are declared and filled using [mustache](https://mustache.github.io/). Below is the view-template for the main experimental trials from the minimal template, which declares mustache-variables `picture`, `question`, `option1` and `option2`. These variables will be filled in a dynamic way with information by the corresponding view-object.
+The view-template in `index.html` essentially declares placeholders which are then filled by the corresponding view-object. Placeholders are declared and filled using [mustache](https://mustache.github.io/). Below is the view-template for the main experimental trials from the minimal template, which declares mustache-variables `picture`, `question`, `option1` and `option2`. These variables will be filled in a dynamic way with information by the corresponding view-object. (<strong>Notice:</strong> if you want to put HTML tags into a mustache variable you will need three curly braces around it, not just two (e.g., we HTML markup is rendered correctly when inserted into variable `question` but not when inserted in variable `picture` in the code below).)
 
 ```html
 {% raw %}
@@ -233,8 +233,4 @@ var config_deploy = {
 };
 ```
 
-For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is described in the [docs](../docs/) (TO BE ADDED SOON).
-
-## Canvas
-
-DOCUMENTATION TO BE INCLUDED SOON
+For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is introduced in the [next section on deployment methods](deployment.html) and elaborated on in the [docs](../docs/) (TO BE ADDED SOON).

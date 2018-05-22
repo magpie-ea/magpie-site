@@ -11,7 +11,7 @@ template](https://github.com/babe-project/MinimalTemplate), or any other templat
 
 If you want to use the _babe server app to run locally on your machine (so that you can submit data to a local data base without requiring an internet connection), you should follow the detailed [installation instructions in the docs](docs/deployment.html#online-server-deployment-instructions-with-heroku).
 
-### Download the Minimal Template
+###  Starting point: minimal template
 
 Start your journey by downloading the [minimal
 template](https://github.com/babe-project/MinimalTemplate) using this link: 
@@ -23,8 +23,14 @@ repository from it.
 
 ### Other templates
 
-Presently, there is only one other template, the [SPR
-template](https://github.com/babe-project/spr-template), for setting up self-paced reading
-experiments, which you can download here:
+There are other templates which realize additional useful functions.
 
-[https://github.com/babe-project/spr-template/archive/master.zip](https://github.com/babe-project/spr-template/archive/master.zip)
+- The [response type template](https://github.com/babe-project/ResponseTypeTemplate) realizes a number of useful input measures, like sliders,
+drop-down menus etc.
+
+- The [canvas template](https://github.com/babe-project/CanvasTemplate) shows how you can
+  create random images on each trial using an HTML canvas. 
+
+- The [self-paced reading
+template](https://github.com/babe-project/spr-template) provides a skeleton for setting up self-paced reading
+experiments. It can be dowloaded here: [https://github.com/babe-project/spr-template/archive/master.zip](https://github.com/babe-project/spr-template/archive/master.zip)
