@@ -10,7 +10,7 @@ _babe has been developed for open science by open scientists:
 
 [Stela Ilieva]()
 
-[Xiang Ji]()
+[Xiang Ji](https://github.com/x-ji/)
 
 [Michael Franke](http://www.sfs.uni-tuebingen.de/~mfranke/)
 
