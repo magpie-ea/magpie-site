@@ -3,9 +3,11 @@
 The response types template offers a number of different ways to obtain user reactions, such
 as:
 
-- click on a button
-- press a key
-- select from a dropdown menu
-- adjust a slider
+- forced-choice task
+- slider rating task
+- dropdown menu choice
+- Likert-scale rating task
+- click-on-a-picture task 
+- press a button task
 
 
