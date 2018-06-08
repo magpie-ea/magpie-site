@@ -19,6 +19,9 @@
     - title: Response types
       slug: responseTypes
 
+    - title: Canvas graphics
+      slug: canvas
+
     - title: Self-paced reading
       slug: spr
   examples:
