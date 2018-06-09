@@ -101,7 +101,9 @@ Note that the database for storing experiment results is stored at `/var/lib/doc
 
 You can post a _babe experiment as an external HIT on MTurk. If you are familiar with posting external HITs, the only thing that you need to take into account is that _babe experiments send their collected data to the _babe backend. So, in order to collect the data from your experiment, you would visit the _babe backend to download a CSV file. No need to go via MTurk.
 
-If you are not familiar with posting external HITs on MTurk, here is an easy method to use that uses `boto3`, which is a Python SDK for Amazon's Web Services (AWS). The method is easy in the sense that it might require less downloading / installing than other methods. You only need Python and the `boto3` package. (But [here](https://github.com/Ciyang/experiment_template) and [there](https://cocolab.stanford.edu/mturk-tools.html) are fully viable alternative methods and resources that provide additional useful information.)
+If you are not familiar with posting external HITs on MTurk, here is an easy method to use that uses `boto3`, which is a Python SDK for Amazon's Web Services (AWS). The [MTurkDeployTemplate](https://github.com/babe-project/MTurkDeployTemplate) gives a full example of an experiment that uses this method.
+
+The method we propose here is easy in the sense that it might require less downloading / installing than other methods. You only need Python and the `boto3` package. (But [here](https://github.com/Ciyang/experiment_template) and [there](https://cocolab.stanford.edu/mturk-tools.html) are fully viable alternative methods and resources that provide additional useful information.)
 
 We assume that you have an MTurk account and that you have your AWS credentials ready at hand. (If not, see [here](https://github.com/Ciyang/experiment_template) for instructions on how to setup your account.) Download a recent version of Python (we used 3.6 at the time of writing) and install the `boto3` package, e.g., using `pip`. Next, in your homedirectory, create the file:
 
