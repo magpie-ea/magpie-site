@@ -164,4 +164,4 @@ print("https://worker.mturk.com/mturk/preview?groupId=" + new_hit['HIT']['HITGro
 print("HITID = " + new_hit['HIT']['HITId'] + " (for your reference)")
 ~~~
 
-Now execute `python postHIT.py`. You can manipulate (expire, extend, ...) your HIT using `boto3` as documented [here](http://boto3.readthedocs.io/en/latest/index.html). For some recurrent manipulations, you can also use [this web interface](https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html).
+Now execute `python postHIT.py`. Make sure you note the HITid that this call returns, because you need it to further identify this experimental run when interacting with MTurk. Use `python get_HIT_status.py YOUR_HIT_ID`, where `YOUR_HIT_ID` is the HITid returned when you posted the HIT, to learn how many workers have completed your work. Use `python approve_HIT.py YOUR_HIT_ID` to reimburse all workers. You can manipulate (expire, extend, ...) your HIT using `boto3` as described in the  [boto3 documentation](http://boto3.readthedocs.io/en/latest/index.html). For some recurrent manipulations, you can also use [this web interface](https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html).
