@@ -174,22 +174,22 @@ dt {
 }
 dd { margin: 5px 0 0 1.5em }
 h1, h2, h3, h4, h5, h6 {
-  font-style: normal;
-  margin: 0 0 3px 0;
   color: rgba(0, 0, 0, 0,87);
   font-family: 'Lato', 'Noto Sans', Georgia, 'Times New Roman', Times, serif;
   line-height: 1.3em;
+  margin: 0 0 3px 0;
 }
 h1 {
   font-family: 'Playfair Display', 'Lato', 'Noto Sans', Georgia, 'Times New Roman', Times, serif;
-  font-size: 2em;
+  font-size: 2.3em;
   margin: 0 0 20px 0;
+  text-align: center;
 }    /* 36 / 13 = 2.769230769230769 */
 h2 {
-  font-size: 1.846153846153846em;    /* 24 / 13 = 1.846153846153846 */
+  font-size: 1.5em;    /* 24 / 13 = 1.846153846153846 */
   margin-top: 1.458333333em;       /* 35 / 24 = 1.458333333 */
 }
-h3 { font-size: 1.538461538461538em; }    /* 20 / 13 = 1.538461538461538 */
+h3 { font-size: 1.4em; }    /* 20 / 13 = 1.538461538461538 */
 h4 { font-size: 1.384615384615385em; }    /* 18 / 13 = 1.384615384615385 */
 h5 {
   font-size: 1.230769230769231em;    /* 16 / 13 = 1.230769230769231 */
@@ -261,10 +261,10 @@ th, td { text-align: left; }
 
 /* WordPress classes
 -------------------------------------------------------------- */
-.hfeed h1, .hfeed h2, .hfeed h3, .hfeed h4, .hfeed h5, .hfeed h6 { font-weight: normal; }
-.hcat h5 {
-  font-weight: normal;
+.hfeed h1, .hfeed h2, .hfeed h3, .hfeed h4, .hfeed h5, .hfeed h6 {
+  font-weight: bold;
   margin-top: 25px;
+  margin: 0;
 }
 .left, .alignleft {
   float: left;
@@ -455,14 +455,16 @@ iframe.video { border:0; }
 .page-template-fullwidth #content { width: 100%; }
 #content {
   float: left;
-  width: 68.08510638297872%;
+  width: 67%;
   margin: 0 0 30px 0;
   min-height: 180px;
 }
 #sidebar-primary {
   float: right;
-  width: 27.65957446808511%;
+  width: 20%;
+  margin: 10px 0 0 0;
 }
+
 .wrap {
   max-width: 940px;
   margin: 0 auto;
@@ -527,7 +529,7 @@ body.dev              div.menu li.dev             a {
 
 #branding {
     float: left;
-    margin: 30px 0 60px 0;
+    margin: 30px 0 30px 0;
     overflow: hidden;
     width: 45%;
 }
@@ -565,7 +567,7 @@ body.dev              div.menu li.dev             a {
   #branding {
     align-items: center;
     display: flex;
-    margin: -10px 0 60px 0;
+    margin: -10px 0 30px 0;
     width: auto;
   }
   .titles {
@@ -769,11 +771,13 @@ li.image {
 /* Widget titles
 -------------------------------------------------------------- */
 .sidebar .widget-title {
+  background-color: #eee;
   font-size: 0.7692307692307692em;  /* 10 / 13 = 0.7692307692307692 */
-  color: #aaa;
+  color: #888;
   text-transform: uppercase;
   letter-spacing: 1px;
   word-spacing: 2px;
+  padding: 0 5px;
 }
 
 /* Search form widget
@@ -785,7 +789,7 @@ li.image {
   color: #aaa;
 }
 .widget .search-form input[type="text"] {
-  width: 91.538461%;
+  width: 86%;
   float: left;
   padding: 8px 10px;
   font-size: 1em;
@@ -828,7 +832,7 @@ li.image {
     max-width: 100%;
     padding: 0 25px;
   }
-  .widget .search-form input[type="text"] { width: 89%; }
+  .widget .search-form input[type="text"] { width: 86%; }
   .widget table { font-size: 0.8461538461538462em; }
   #footer .widget table { width: 90%; }
 }
