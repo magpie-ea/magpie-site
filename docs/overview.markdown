@@ -7,8 +7,6 @@ section: docs
 
 # {{ page.title }}
 
-{% include toc.html %}
-
 This part introduces babe. We first look at the general structure of experiments and then at how to deploy them
 
 ## Overview
