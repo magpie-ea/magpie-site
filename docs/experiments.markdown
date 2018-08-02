@@ -6,8 +6,6 @@ section: docs
 
 # {{ page.title }}
 
-{% include toc.html %}
-
 
 ## Understanding counters
 
