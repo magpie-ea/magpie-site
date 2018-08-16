@@ -14,7 +14,7 @@ There are several ways in which experiments can be deployed.
 
 ### Frontend
 
-By default, _babe relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [BitBalloon](https://www.bitballoon.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
+By default, _babe relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [Netlify](https://www.netlify.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
 
 To deploy an experiment via Github Pages:
 1. make sure that the experiment repo is already on Github, e.g. https://github.com/babe-project/MinimalTemplate
