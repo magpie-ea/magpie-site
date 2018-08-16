@@ -214,11 +214,9 @@ Every experiment needs information about **deployment**. Deployment is the way i
 var config_deploy = {
     
     // obligatory fields
-	
+
     // needed to recover data from server app
-    "author": "RandomJane",
-    // needed to recover data from server app
-    "experiment_id": "MinimalTemplateDEMO", 
+    "experiment_id": 8,
     "description": "A minimal template for a browser-based experiment",
 
     // set deployment method; use one of:
