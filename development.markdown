@@ -8,7 +8,7 @@ layout: default
 
 _babe has been developed for open science by open scientists:
 
-[Stela Ilieva]()
+[Stela Ilieva](https://github.com/stelaseldano/)
 
 [Xiang Ji](https://github.com/x-ji/)
 

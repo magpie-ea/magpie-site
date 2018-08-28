@@ -214,11 +214,9 @@ Every experiment needs information about **deployment**. Deployment is the way i
 var config_deploy = {
     
     // obligatory fields
-	
+
     // needed to recover data from server app
-    "author": "RandomJane",
-    // needed to recover data from server app
-    "experiment_id": "MinimalTemplateDEMO", 
+    "experiment_id": 8,
     "description": "A minimal template for a browser-based experiment",
 
     // set deployment method; use one of:
@@ -234,3 +232,23 @@ var config_deploy = {
 ```
 
 For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is introduced in the [next section on deployment methods](deployment.html) and elaborated on in the [docs](../docs/) (TO BE ADDED SOON).
+
+## Dynamic retrieval of previous experiment results
+For some experiments, it might helpful to fetch and use data collected from previous experiment submissions in order to dynamically generate future trials. The _babe backend now provides this functionality.
+
+For each experiment, you can specify the keys that should be fetched in the "Edit Experiment" user interface on the server app. Then, with a HTTP GET call to the `retrieve_experiment` endpoint, specifying the experiment ID, you will be able to get a JSON object that contains the results of that experiment so far.
+
+`{SERVER_ADDRESS}/api/retrieve_experiment/:id`
+
+A [minimal example](https://jsfiddle.net/SZJX/dp8ewnfx/) of frontend code using jQuery:
+
+```javascript
+  $.ajax({
+    type: 'GET',
+    url: "https://babe-demo.herokuapp.com/api/retrieve_experiment/1",
+    crossDomain: true,
+    success: function (responseData, textStatus, jqXHR) {
+    	console.table(responseData);
+    }
+  });
+```
