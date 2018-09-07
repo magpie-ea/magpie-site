@@ -165,3 +165,26 @@ print("HITID = " + new_hit['HIT']['HITId'] + " (for your reference)")
 ~~~
 
 Now execute `python create_HIT.py`. Make sure you note the HITid that this call returns, because you need it to further identify this experimental run when interacting with MTurk. Download file `get_HIT_status.py` [here](https://github.com/babe-project/MTurkDeployTemplate/blob/master/get_HIT_status.py) and use `python get_HIT_status.py YOUR_HIT_ID`, where `YOUR_HIT_ID` is the HITid returned when you posted the HIT, to learn how many workers have completed your work. Download file `approve_HIT.py` [here](https://github.com/babe-project/MTurkDeployTemplate/blob/master/approve_HIT.py) and use `python approve_HIT.py YOUR_HIT_ID` to reimburse all workers. You can manipulate (expire, extend, ...) your HIT using `boto3` as described in the  [boto3 documentation](http://boto3.readthedocs.io/en/latest/index.html). For some recurrent manipulations, you can also use [this web interface](https://manage-hits-individually.s3.amazonaws.com/v4.0/index.html).
+
+## Recruiting participants via Prolific
+
+You can easily recruit participants for your _babe experiment via [Prolific](https://www.prolific.ac). The [ProlificDeployTemplate](https://github.com/babe-project/ProlificDeployTemplate) is a simple example to showcase how you can collect data with Prolific. The following assumes that you are familiar with how to operate experiments with Prolific.
+
+Go to the Prolific website and create a new experiment. Make a note of the completion code that is provided by Prolific.
+
+<img src="https://raw.githubusercontent.com/babe-project/ProlificDeployTemplate/master/images/readme/prolific_code.png" width="100%" >
+
+Next, you need to make two important changes to `config_deploy.js` (do not forget to upload/push these changes before launching the experiment!). 
+
+```javascript
+var config_deploy = {
+	... 
+    "deployMethod" : "Prolific", 
+    "prolificCode": "Z47M3IVO", // as supplied by Prolific
+    ... 
+};
+```
+
+First, you need to supply the experiment code that you obtained from the Prolific website. Second, you need to set the `deployMethod` to `Prolific`. The latter has two consequences. For one, it will insert a text input field in the introduction view of your experiment. For another, it will supply a `confirm` button at the end of the experiment, which takes participants to the Prolific website where they are supplied with their completion code.
+
+The data from your experiment will _not_ be stored by Prolific, but recorded in the _babe back end. Before launching the study on Prolific, double-check that the data base on the back end is set up and the necessary information (`experimentID`, server URL) are set. 
