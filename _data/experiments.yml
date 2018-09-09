@@ -1,0 +1,30 @@
+- title: Getting Started
+  dir: /getting-started/
+  pages:
+    - title: Introduction
+      slug: introduction
+
+    - title: File structure
+      slug: 02filestructure
+
+    - title: The "exp" object
+      slug: 03expobject
+
+    - title: Trial information & randomization
+      slug: 04trialinfo
+
+    - title: Views
+      slug: 05views
+
+    - title: Configuration
+      slug: 06config
+
+    - title: Server app & deployment
+      slug: deployment
+
+    - title: HTML, CSS & JS
+      slug: 07htmlResources
+
+
+
+

@@ -1,15 +1,10 @@
 ---
-layout: getting-started
+layout: experiments
 title: Experiments
-section: start
+section: experiments
 ---
 
 # {{ page.title }}
-
-This guide walks through the minimal template, which you can [obtain here](../obtain.html), so
-that you can use it as a starting point of your own experiments. More information about _babe experiments is in the [docs](../docs/experiments.html).
-
-{% include toc.html %}
 
 ## File structure
 
