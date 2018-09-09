@@ -24,6 +24,12 @@
 
     - title: Self-paced reading
       slug: spr
+
+    - title: MTurk deployment
+      slug: MTurk
+
+    - title: Prolific deployment
+      slug: Prolific
   examples:
     - title: Mental Chronometry
       slug: MentalChronometry
