@@ -91,7 +91,7 @@ Second, there is `exp.views_seq` which is just an array of names of views that a
 
 ### Trial information & randomization
 
-Trial information is supplied as an array of objects, for example as in `trial_info/main_trials.js`, the content of which is:
+Trial information can, for example, be supplied as an array of objects, as in `trial_info/main_trials.js`, the content of which is:
 
 ```javascript
 var main_trials = [
@@ -106,9 +106,9 @@ var main_trials = [
 ];
 ```
 
-This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like this template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file. This is documented here. (TO BE WRITTEN SOON.)
+This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like the minimal template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file and you may also obtain it from a data base, using the server app. (INFORMATION TO BE ADDED SOON.)
 
-Normally, we would like to randomize trial order in some way or other. This is what happens inside of `exp.customize()`, where we have:
+Normally, we would like to randomize the trial order in some way or other. This is what happens inside of `exp.customize()`, where we have:
 
 ```javascript
 this.trial_info.main_trials = _.shuffle(main_trials)
@@ -123,36 +123,32 @@ Views correspond to the larger coherent chunks of the experiment, e.g., an instr
 
 <img src="../images/view_schema.png" width="100%" >
 
-The view-template in `index.html` essentially declares placeholders which are then filled by the corresponding view-object. Placeholders are declared and filled using [mustache](https://mustache.github.io/). Below is the view-template for the main experimental trials from the minimal template, which declares mustache-variables `picture`, `question`, `option1` and `option2`. These variables will be filled in a dynamic way with information by the corresponding view-object. (<strong>Notice:</strong> if you want to put HTML tags into a mustache variable you will need three curly braces around it, not just two (e.g., we HTML markup is rendered correctly when inserted into variable `question` but not when inserted in variable `picture` in the code below).)
+The view-template in `index.html` essentially declares placeholders which are then filled by the corresponding view-object. Placeholders are declared and filled using [mustache](https://mustache.github.io/). Below is the view-template for the main experimental trials from the minimal template, which declares mustache-variables `picture`, `question`, `option1` and `option2`. These variables will be filled in a dynamic way with information by the corresponding view-object. (<strong>Notice:</strong> if you want to put HTML tags into a mustache variable you will need three curly braces around it, not just two (e.g., HTML markup is rendered correctly when inserted into variable `question` but not when inserted in variable `picture` in the code below).)
 
 ```html
 {% raw %}
 <!-- main view (buttons response) -->
 <script id="main-view" type="x-tmpl-mustache">
-  <div class="view">
-  <div class="progress-bar-container">
-	<p>progress</p>
-	<div class="progress-bar"><span id='filled'><span></div>
-  </div>
-  <div class="clearfix"></div>
-  <div class="picture", align = "center">
-    <img src={{picture}} alt="a picture" height="100" width="100">
-  </div>
+<div class="view">
 
-  <p class="question">
-    {{# question }}
-	  {{{ question }}}
-    {{/ question }} 
-  </p>
+ <div class="picture", align = "center">
+  <img src={{picture}} alt="a picture" height="100" width="100">
+ </div>
 
-  <p class="answer-container">
-	<label for="yes" class="button-answer">{{ option1 }}</label>
-	<input type="radio" name="answer" id="yes" value={{ option1 }} />
-	<input type="radio" name="answer" id="no" value={{ option2 }} />
-	<label for="no" class="button-answer">{{option2}}</label>
-  </p>
+ <p class="question">
+  {{# question }}
+  {{{ question }}}
+  {{/ question }}
+ </p>
 
-  </div>
+ <p class="answer-container">
+  <label for="yes" class="button-answer">{{ option1 }}</label>
+  <input type="radio" name="answer" id="yes" value={{ option1 }} />
+  <input type="radio" name="answer" id="no" value={{ option2 }} />
+  <label for="no" class="button-answer">{{option2}}</label>
+ </p>
+
+</div>
 </script>
 {% endraw %}
 ```
@@ -161,45 +157,39 @@ A view-object has two mandatory elements. First, `trials` contains the number of
 
 ```javascript
 var main = {
-    
-    trials : 2,
-    
-    render : function(CT) {
-        
-        // fill variables in view-template
-        var viewTemplate = $('#main-view').html();
-        $('#main').html(Mustache.render(viewTemplate, {
-            question: exp.trial_info.main_trials[CT].question,
-            option1:  exp.trial_info.main_trials[CT].option1,
-            option2:  exp.trial_info.main_trials[CT].option2,
-            picture:  exp.trial_info.main_trials[CT].picture
-        }));
-        
-        // update the progress bar
-        var filled = CT * (180 / exp.views_seq[exp.currentViewCounter].trials);
-        $('#filled').css('width', filled);
+// render function renders the view
+render: function (CT) {
+  // fill variables in view-template
+  var viewTemplate = $('#main-view').html();
+  $('#main').html(Mustache.render(viewTemplate, {
+    question: exp.trial_info.main_trials[CT].question,
+    option1: exp.trial_info.main_trials[CT].option1,
+    option2: exp.trial_info.main_trials[CT].option2,
+    picture: exp.trial_info.main_trials[CT].picture}
+  ));
+  
+  // event listener for buttons; when input is selected, response
+  // and additional information are stored in exp.trial_info
+  $('input[name=answer]').on('change', function () {
+    RT = Date.now() - startingTime; // measure RT first
+    trial_data = {
+    trial_type: "mainForcedChoice",
+    trial_number: CT + 1,
+    question: exp.trial_info.main_trials[CT].question,
+    option1: exp.trial_info.main_trials[CT].option1,
+    option2: exp.trial_info.main_trials[CT].option2,
+    option_chosen: $('input[name=answer]:checked').val(),
+    RT: RT
+    };
+  exp.trial_data.push(trial_data);
+  exp.findNextView();
+  });
 
-        // event listener for buttons; when an input is selected, the response
-        // and additional information are stored in exp.trial_info
-        $('input[name=answer]').on('change', function() {
-            RT = Date.now() - startingTime; // measure RT before anything else
-            trial_data = {
-                trial_type: "mainForcedChoice",
-                trial_number: CT+1,
-                question: exp.trial_info.main_trials[CT].question,
-                option1:  exp.trial_info.main_trials[CT].option1,
-                option2:  exp.trial_info.main_trials[CT].option2,
-                option_chosen: $('input[name=answer]:checked').val(),
-                RT: RT
-            };
-            exp.trial_data.push(trial_data);
-            exp.findNextView();
-        });
-        
-        // record trial starting time
-        startingTime = Date.now();
-        
-    }
+  // record trial starting time
+  startingTime = Date.now();
+
+},
+trials: 4
 };
 ```
 
@@ -211,43 +201,23 @@ Every experiment needs information about **deployment**. Deployment is the way i
 
 ```javascript
 var config_deploy = {
-    
-    // obligatory fields
 
-    // needed to recover data from server app
-    "experiment_id": 8,
-    "description": "A minimal template for a browser-based experiment",
+    // obligatory fields (unless in debug mode)
+
+    // experimentID provided by _babe server app
+    "experimentID": "YOUR_EXPERIMENT_ID",
+    // if you use the _babe server app, specify its URL here
+    "serverAppURL": "https://YOUR_SERVER_URL/api/submit_experiment/",
 
     // set deployment method; use one of:
-    //'debug', 'localServer', 'MTurk', 
+    // 'debug', 'localServer', 'MTurk', 
     // 'MTurkSandbox', 'Prolific', 'directLink'
-    "deployMethod" : "debug", 
-    
-    // optional fields
-    
+    "deployMethod": "debug",
+
     // who to contact in case of trouble
-    "contact_email": "YOUREMAIL@wherelifeisgreat.you", 
+    "contact_email": "YOUREMAIL@wherelifeisgreat.you",
 };
+
 ```
 
-For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is introduced in the [next section on deployment methods](deployment.html) and elaborated on in the [docs](../docs/) (TO BE ADDED SOON).
-
-## Dynamic retrieval of previous experiment results
-For some experiments, it might helpful to fetch and use data collected from previous experiment submissions in order to dynamically generate future trials. The _babe backend now provides this functionality.
-
-For each experiment, you can specify the keys that should be fetched in the "Edit Experiment" user interface on the server app. Then, with a HTTP GET call to the `retrieve_experiment` endpoint, specifying the experiment ID, you will be able to get a JSON object that contains the results of that experiment so far.
-
-`{SERVER_ADDRESS}/api/retrieve_experiment/:id`
-
-A [minimal example](https://jsfiddle.net/SZJX/dp8ewnfx/) of frontend code using jQuery:
-
-```javascript
-  $.ajax({
-    type: 'GET',
-    url: "https://babe-demo.herokuapp.com/api/retrieve_experiment/1",
-    crossDomain: true,
-    success: function (responseData, textStatus, jqXHR) {
-    	console.table(responseData);
-    }
-  });
-```
+For the minimal template, we will only use the `debug` deployment method, which shows the final data as a table on the screen. This is the format in which you would get your data as a `*.csv` file if you would submit your data to a, say, crowd-sourcing platform or the _babe server app. How to do this is introduced in the [next section on deployment methods](deployment.html) and elaborated on in the [docs](../docs/).
