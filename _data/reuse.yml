@@ -33,6 +33,9 @@
 
     - title: Feature Integration
       slug: FeatureIntegration
+
+    - title: Quantifier Naturalness
+      slug: QuantifierNaturalness
   tricks:
     - title: Trial info from CSV-files
       slug: trialInfoCSV
