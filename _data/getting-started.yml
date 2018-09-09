@@ -1,13 +1,13 @@
 - title: Getting Started
   dir: /getting-started/
   pages:
-    - title: Introduction
+    - title: Overview
       slug: introduction
 
     - title: Experiments
       slug: experiments
 
-    - title: Deployment
+    - title: Server app & deployment
       slug: deployment
 
 

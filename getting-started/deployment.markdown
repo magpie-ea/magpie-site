@@ -1,6 +1,6 @@
 ---
 layout: getting-started
-title: Deployment
+title: Server app  & deployment
 section: start
 ---
 

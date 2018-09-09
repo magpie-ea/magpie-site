@@ -6,10 +6,10 @@ layout: default
 
 # {{ page.title }}
 
-Programming a browser-based experiment using _babe does not require installation of any additional software beyond a recent browser. You only need to download either the [minimal
-template](https://github.com/babe-project/MinimalTemplate), or any other template or example provided and start modifying it. Read the <a href="/babe_site/getting-started/introduction.html">getting started guide</a> to find out how.
+Creating a browser-based experiment with _babe does not require installation of fancy software. You basically only need a recent browser and a text editor. Start by downloading a template, such as the [minimal
+template](https://github.com/babe-project/MinimalTemplate), adding elements from the list of examples or other templates and  modifying your experiment into shape at will. Read the <a href="/babe_site/getting-started/introduction.html">getting started guide</a> to find out more about the structure of a _babe experiment and how to use it to collect data.
 
-If you want to use the _babe server app to run locally on your machine (so that you can submit data to a local data base without requiring an internet connection), you should follow the detailed [installation instructions in the docs](docs/deployment.html#online-server-deployment-instructions-with-heroku).
+If you want to use the _babe server app, either locally on your computer or on a server, you should follow the detailed [installation instructions in the docs](docs/deployment.html#online-server-deployment-instructions-with-heroku).
 
 ###  Starting point: minimal template
 
@@ -23,14 +23,4 @@ repository from it.
 
 ### Other templates
 
-There are other templates which realize additional useful functions.
-
-- The [response type template](https://github.com/babe-project/ResponseTypeTemplate) realizes a number of useful input measures, like sliders,
-drop-down menus etc.
-
-- The [canvas template](https://github.com/babe-project/CanvasTemplate) shows how you can
-  create random images on each trial using an HTML canvas. 
-
-- The [self-paced reading
-template](https://github.com/babe-project/spr-template) provides a skeleton for setting up self-paced reading
-experiments. It can be dowloaded here: [https://github.com/babe-project/spr-template/archive/master.zip](https://github.com/babe-project/spr-template/archive/master.zip)
+Find out more about the other templates and fully implemented examples in the [reuse section](reuse/introduction.html).
