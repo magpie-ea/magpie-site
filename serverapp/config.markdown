@@ -1,7 +1,7 @@
 ---
-layout: getting-started
+layout: serverapp
 title: Server app  & deployment
-section: start
+section: serverapp
 ---
 
 # {{ page.title }}

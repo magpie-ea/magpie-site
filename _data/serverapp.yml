@@ -1,0 +1,15 @@
+- title: Server app
+  dir: /serverapp/
+  pages:
+    - title: Overview
+      slug: overview
+
+    - title: Configuration
+      slug: config
+
+    - title: Installation
+      slug: deployment
+
+
+
+

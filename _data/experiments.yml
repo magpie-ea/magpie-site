@@ -1,5 +1,5 @@
-- title: Getting Started
-  dir: /getting-started/
+- title: Experiments
+  dir: /experiments/
   pages:
     - title: Introduction
       slug: introduction
@@ -19,11 +19,17 @@
     - title: Configuration
       slug: 06config
 
-    - title: Server app & deployment
-      slug: deployment
+    - title: Counters
+      slug: 07counters
+
+    - title: Trial sequencing
+      slug: 08sequencing
+
+    - title: Dynamic data retrieval
+      slug: 09dynamics
 
     - title: HTML, CSS & JS
-      slug: 07htmlResources
+      slug: htmlResources
 
 
 

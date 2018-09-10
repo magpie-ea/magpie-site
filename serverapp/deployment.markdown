@@ -1,7 +1,7 @@
 ---
-layout: docs
+layout: serverapp
 title: Deployment
-section: docs
+section: serverapp
 ---
 
 # {{ page.title }}

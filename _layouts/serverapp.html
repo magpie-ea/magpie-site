@@ -1,5 +1,5 @@
 ---
-section: docs
+section: serverapp
 ---
 
 {% include top.html %}
@@ -7,8 +7,8 @@ section: docs
 <div id="sidebar-primary" class="sidebar">
   {% include search.html %}
 
-  {% assign guides = site.data.docs  %}
-  {% for guide in site.data.docs %}
+  {% assign guides = site.data.serverapp  %}
+  {% for guide in site.data.serverapp %}
     <div class="widget">
      <h3 class="widget-title">{{guide.title}}</h3>
       <ol>
@@ -39,8 +39,8 @@ section: docs
   {% assign guide_base_url = page.url | replace: file_name %}
   {% assign page_slug = file_name | replace: '.html' %}
 
-  {% assign guides = site.data.docs  %}
-  {% for guide in site.data.docs %}
+  {% assign guides = site.data.serverapp  %}
+  {% for guide in site.data.serverapp %}
     {% if guide.dir == guide_base_url %}
       {% for node in guide.pages %}
         {% if node.slug == page_slug %}
