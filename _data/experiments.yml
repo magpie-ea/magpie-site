@@ -1,0 +1,36 @@
+- title: Experiments
+  dir: /experiments/
+  pages:
+    - title: Introduction
+      slug: introduction
+
+    - title: File structure
+      slug: 02filestructure
+
+    - title: The "exp" object
+      slug: 03expobject
+
+    - title: Trial information & randomization
+      slug: 04trialinfo
+
+    - title: Views
+      slug: 05views
+
+    - title: Configuration
+      slug: 06config
+
+    - title: Counters
+      slug: 07counters
+
+    - title: Trial sequencing
+      slug: 08sequencing
+
+    - title: Dynamic data retrieval
+      slug: 09dynamics
+
+    - title: HTML, CSS & JS
+      slug: htmlResources
+
+
+
+

@@ -1,0 +1,16 @@
+- title: Data collection
+  dir: /datacollection/
+  pages:
+    - title: Overview
+      slug: overview
+
+    - title: Direct link
+      slug: 01directLink
+
+    - title: Mechanical Turk
+      slug: 02MTurk
+
+    - title: Prolific
+      slug: 03Prolific
+
+

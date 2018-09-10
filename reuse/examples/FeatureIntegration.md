@@ -4,4 +4,7 @@ This example implements a replication of experiment 1 from the Treisman & Gelade
 
 This implementation of the experiment offers on-the-trial randomization of displays and a detailed feedback report after each trial, including the average reaction time and average hit rate by the participant so far.
 
-More information about the experimental set-up and the code for this experiment can be found in the <a href="https://github.com/babe-project/FeatureIntegration" title="FeatureIntegration" target="_blank"> FeatureIntegration repository.</a>
+More information about the experimental set-up and the code for this experiment can be found in
+the <a href="https://github.com/babe-project/FeatureIntegration" title="FeatureIntegration"
+target="_blank"> FeatureIntegration repository.</a> The experiment was implemented with the
+help of [Noa Kaillioinen](https://github.com/n-kall). 
