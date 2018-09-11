@@ -8,15 +8,15 @@ section: serverapp
 
 After installation you can visit the server app in a browser, with the username and password you previously specified. For Heroku deployment, you may do so by running `heroku open` in the command line or find the app URL in your Heroku account. For local deployment, the URL is by default http://localhost:4000.
 
-The server app shows a list of experiments whose data may be stored in the database. It
+The server app shows a list of experiments whose data may be stored in a database. It
 shows the experiments ID, its name, its author, the number of submissions retrieved so far,
 date information, as well as whether the experiment is currently active or not. If an
-experiment is set to be active, it allows further submissions to be recorded in its
+experiment is set to be active, it allows further submissions to be recorded in the
 database.
 
 <img src="../images/server_app_screen.png" width="100%">
 
-The server app allows you to retrieve the data for an experiment from its database. Simply
+The server app allows you to retrieve the data for an experiment from the database. Simply
 click on the button "Retrieve CSV" to download a CSV-file with the data collected so far.
 
 To delete an experiment, click the "Delete" button. Always make sure that you have recovered
