@@ -13,6 +13,7 @@ installation on [Heroku](https://www.heroku.com/).
 
 There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) on how to deploy the Phoenix framework on Heroku. The deployment procedure is based on this guide, but differs in some places.
 
+{:start="0"}
 0. Ensure that you have [the Phoenix Framework installed](https://hexdocs.pm/phoenix/installation.html) and working. However, if you just want to deploy this server and do no development work/change on it at all, you may skip this step.
 
 1. Ensure that you have a [Heroku account](https://signup.heroku.com/) already, and have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and working on your computer.
@@ -25,7 +26,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) on how to d
 
 5. Run `heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git`
 
-  (N.B.: Although the command line output tells you to run `git push heroku master`, don't do it yet.)
+    (N.B.: Although the command line output tells you to run `git push heroku master`, don't do it yet.)
 
 6. You may want to change the application name instead of using the default name. In that case, run `heroku apps:rename newname`.
 
@@ -33,23 +34,23 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) on how to d
 
 8. Ensure that you're at the top-level project directory. Run
 
-  ```
-  heroku addons:create heroku-postgresql:hobby-dev
-  heroku config:set POOL_SIZE=18
-  ```
+    ```
+    heroku addons:create heroku-postgresql:hobby-dev
+    heroku config:set POOL_SIZE=18
+    ```
 
 9. Run `mix deps.get` then `mix phx.gen.secret`. Then run `heroku config:set SECRET_KEY_BASE="OUTPUT"`, where `OUTPUT` should be the output of the `mix phx.gen.secret` step.
 
-  Note: If you don't have the Phoenix framework installed on your computer, you may choose to use some other random generator for this task, which essentially asks for a random 64-character secret. On Mac and Linux, you may run `openssl rand -base64 64`. Or you may use an online password generator [such as the one offered by LastPass](https://lastpass.com/generatepassword.php).
+    Note: If you don't have the Phoenix framework installed on your computer, you may choose to use some other random generator for this task, which essentially asks for a random 64-character secret. On Mac and Linux, you may run `openssl rand -base64 64`. Or you may use an online password generator [such as the one offered by LastPass](https://lastpass.com/generatepassword.php).
 
 10. Run `git add config/prod.exs`, then `git commit -m "Set app URL"`.
 
 11. Don't forget to set the environment variables `AUTH_USERNAME` and `AUTH_PASSWORD`, either in the Heroku web interface or via the command line, i.e.
 
-  ```
-  heroku config:set AUTH_USERNAME="your_username"
-  heroku config:set AUTH_PASSWORD="your_password"
-  ```
+    ```
+    heroku config:set AUTH_USERNAME="your_username"
+    heroku config:set AUTH_PASSWORD="your_password"
+    ```
 
 12. Run `git push heroku master`. This will push the repo to the git remote at Heroku (instead of the original remote at Github), and deploy the app.
 
