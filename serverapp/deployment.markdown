@@ -8,8 +8,6 @@ section: serverapp
 
 This page contains detailed deployment instructions.
 
-{% include toc.html %}
-
 ## Online server deployment instructions with Heroku
 [Heroku](https://www.heroku.com/) makes it easy to deploy an web app without having to manually manage the infrastructure. It has a free starter tier, which should be sufficient for the purpose of running experiments.
 
