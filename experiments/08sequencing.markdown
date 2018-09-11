@@ -1,12 +1,10 @@
 ---
 layout: experiments
-title: Advanced sequencing of views
+title: Trial sequencing, loops &amp; randomization
 section: experiments
 ---
 
 # {{ page.title }}
-
-### Loops
 
 Suppose you have an experiment where a sequence of views is to be repeated many times in a loop. For example, your main trials could consist of three types of displays: (i) get ready, (ii) do task and (iii) receive feedback. To implement this, _babe supplies a convenience function `loop(array, count)` which you can use in `exp.customize()`. You could then write code like this:
 
@@ -54,8 +52,6 @@ views_seq = [intro,
              postSurvey,
              thanks]
 ```
-
-### Shuffles & shuffled loops
 
 It is, of course, also possible to shuffle views if they are supposed to come in arbitrary order:
 
