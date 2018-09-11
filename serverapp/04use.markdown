@@ -33,5 +33,4 @@ if used unwisely could also cause you loss of relevant data.
 Finally, the server app allows you to create and manage new experiments. Click on the
 "New" button to do this. The interface for creating a new experiment is parallel to editing an
 existing experiment. Importantly, you need to give some required information about a
-new experiment (name and author). If you want to use dynamic retrieval of experiment data
-(TODO: document and insert link), you must specify which fields should be available to be retrieved by your API calls. This allows you to expose only the relevant fields, since the dynamic retrieval API is not password protected by default.
+new experiment (name and author). If you want to use dynamic retrieval of experiment data (documented [here](../experiments/09dynamics)), you must specify which fields should be available to be retrieved by your API calls. This allows you to expose only the relevant fields, since the dynamic retrieval API is not password protected by default.
