@@ -6,7 +6,7 @@ section: serverapp
 
 # {{ page.title }}
 
-The _babe server app can be installed on any server. We here describe the process for
+The _babe server app can be hosted on any hosting service or your own server. We here describe the process for
 installation on [Heroku](https://www.heroku.com/).
 
 [Heroku](https://www.heroku.com/) makes it easy to deploy an web app without having to manually manage the infrastructure. It has a free starter tier, which should be sufficient for the purpose of running experiments.
