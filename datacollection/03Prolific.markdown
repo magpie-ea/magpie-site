@@ -19,13 +19,11 @@ Next, you need to make two important changes to `config_deploy.js` (do not forge
 var config_deploy = {
     ...
     "deployMethod" : "Prolific",
-    "prolificURL": "https://app.prolific.ac/submissions/complete?cc=Z47M3IVO", // as supplied by Prolific
+    "prolificURL": "https://app.prolific.ac/submissions/complete?cc=EZXBK7UQ", // as supplied by Prolific
     ...
 };
 ```
 
 First, you need to supply the experiment's **completion URL** that you obtained from the Prolific website. Second, you need to set the `deployMethod` to `Prolific`. The latter has two consequences. For one, it will insert a text input field in the introduction view of your experiment. For another, it will supply a `confirm` button at the end of the experiment, which takes participants to the Prolific website where they are supplied with their completion code.
 
-The data from your experiment will _not_ be stored by Prolific, but recorded in the _babe back end. Before launching the study on Prolific, double-check that the data base on the back end is set up and the necessary information (`experimentID`, server URL) are set. 
-
-
+The data from your experiment will _not_ be stored by Prolific, but recorded in the _babe back end. Before launching the study on Prolific, double-check that the data base on the back end is set up and the necessary information (`experimentID`, server URL) are set.
