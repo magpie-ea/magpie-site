@@ -4,14 +4,10 @@ Website with documentation for _babe (basic architecture for browser-based exper
 
 https://babe-project.github.io/babe_site/index.html
 
-If you download and run this site locally, use:
+This site is based on [Jekyll](https://jekyllrb.com/). If you download and run this site locally, use:
 
 `bundle exec jekyll serve`
 
 You may have to first do:
 
-`bundle install`
-
-
-
-
+`gem install bundler jekyll` and `bundle install`

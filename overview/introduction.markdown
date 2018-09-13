@@ -18,8 +18,3 @@ The [_babe server app](deployment.html) offers ready-made but customizable funct
 
 _babe provides convenience functions to help you collect data from participants in many ways. It only requires changing a few lines of code to either just share a link with your friends or students, post it as a HIT on Amazon's Mechanical Turk or recruit participants via Prolific. More on this is in the [data collection section](datacollection/introduction.html).
 
-_babe experiments rely on HTML, CSS and Javascript and require no installation of additional software beyond a text editor and a modern browser. Helpful resources for the development of _babe experiments can be found here:
-- [Mozilla Developer Network's guide](https://developer.mozilla.org/en-US/docs/Learn)  is a good starting point for learning about web development.
-- [FreeCodeCamp](https://www.freecodecamp.org/) offers a self-paced curriculum.
-- [Javascript 30](https://javascript30.com/) is a free course that helps you better understand vanilla Javascript.
-- [JSFiddle](https://jsfiddle.net/) and [CodePen](https://codepen.io/) are code playgrounds that help you experiment with HTML/CSS/JS code real-time.

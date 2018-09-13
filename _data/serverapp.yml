@@ -4,11 +4,14 @@
     - title: Overview
       slug: overview
 
-    - title: Configuration
-      slug: config
+    - title: Installation on Heroku
+      slug: 02serverinstall
 
-    - title: Installation
-      slug: deployment
+    - title: Local installation
+      slug: 03localinstall
+
+    - title: Using the server app
+      slug: 04use
 
 
 
