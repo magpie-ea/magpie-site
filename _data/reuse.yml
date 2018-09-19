@@ -45,6 +45,9 @@
 
     - title: Quantifier Naturalness
       slug: QuantifierNaturalness
+
+    - title: Iterated Narration
+      slug: IteratedNarration
   tricks:
     - title: Trial info from CSV-files
       slug: trialInfoCSV
