@@ -30,6 +30,9 @@
 
     - title: Prolific deployment
       slug: Prolific
+
+    - title: Dynamic data retrieval
+      slug: dynamicData
   examples:
     - title: Mental Chronometry
       slug: MentalChronometry
