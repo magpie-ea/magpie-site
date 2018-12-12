@@ -35,7 +35,7 @@ var config_deploy = {
 ```
 
 ### Backend configuration
-After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _babe is available at https://github.com/babe-project/BABE. You may refer to its documentation for details. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). A demo app is deployed on Heroku at https://babe-demo.herokuapp.com/.
+After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _babe is available at https://github.com/babe-project/BABE. You may refer to its documentation for details. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). A demo app is deployed on Heroku at [https://babe-demo.herokuapp.com/](https://babe-demo.herokuapp.com/).
 
 In the current version of the server app, each experiment is explicitly created and managed with a user interface. After creation, each experiment gets assigned a unique ID. Experiment results need to be submitted with [HTTP POST](https://en.wikipedia.org/wiki/HTTP_POST) in [JSON format](https://en.wikipedia.org/wiki/JSON) to the endpoint displayed in the UI:
 
@@ -51,7 +51,7 @@ var config_deploy = {
 }
 ```
 
-You are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](https://babe-project.github.io/babe_site/docs/deployment.html#online-server-deployment-instructions-with-heroku)
+You are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](../serverapp/02serverinstall.html)
 
 ## Deploying an experiment locally
 Sometimes you may want to let the participants complete an experiment directly on a local machine without requiring internet connection. This is particularly useful for doing fieldwork or working in labs.
@@ -72,7 +72,7 @@ You can then run the experiment by opening `index.html` in the browser in your l
 (Of course, if the machine has internet connection, you can still specify `directLink` as the `deployMethod`, and the results will be submitted to the online server instead, even if the experiment is run locally. This way you won't need to additionally run a local server.)
 
 ### Backend configuration
-This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](https://babe-project.github.io/babe_site/docs/deployment.html#local-server-deployment-instructions-with-docker) for detailed deployment instructions.
+This time, the server needs to be deployed on the local machine instead of online. To simplify the deployment, [Docker](https://www.docker.com/) is used. Please refer to [the documentation](../serverapp/03localinstall.html) for detailed deployment instructions.
 
 Everything else, including the usage of the user interface, should remain the same just like in online deployment.
 
