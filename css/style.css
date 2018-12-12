@@ -510,12 +510,14 @@ iframe.video { border:0; }
 }
 
 body.home             div.menu li.home            a,
-body.obtain           div.menu li.obtain          a,
-body.start            div.menu li.start           a,
-body.docs             div.menu li.docs            a,
+body.overview         div.menu li.overview        a,
+body.experiments      div.menu li.experiments     a,
+body.serverapp        div.menu li.serverapp       a,
+body.datacollection   div.menu li.datacollection  a,
+body.reuse            div.menu li.reuse           a,
 body.dev              div.menu li.dev             a {
   border-bottom: 2px solid #4e2a8e;
-}
+} 
 
 /* Header
 -------------------------------------------------------------- */
