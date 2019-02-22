@@ -21,7 +21,7 @@ var main_trials = [
 ];
 ```
 
-This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like the minimal template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file and you may also obtain it from a data base, using the server app. (INFORMATION TO BE ADDED SOON.)
+This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like the minimal template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file and you may also obtain it from a database, using the server app. (INFORMATION TO BE ADDED SOON.)
 
 Normally, we would like to randomize the trial order in some way or other. This is what happens inside of `exp.customize()`, where we have:
 
