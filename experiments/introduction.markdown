@@ -7,6 +7,5 @@ section: experiments
 
 # {{ page.title }}
 
-This guide walks through the minimal template, which you can [obtain here](https://github.com/babe-project/MinimalTemplate), so
-that you can use it as a starting point of your own experiments.
+This guide walks through the Departure Point, a minimal example, which you can [obtain here](https://github.com/babe-project/MinimalTemplate) and use as a starting point of your own experiments.
 
