@@ -29,6 +29,7 @@ Creating a browser-based experiment with _babe does not require installation of 
 - usually, you might just want to manipulate the following files:
 	- `main.js` :: contains the experiment structure and general information about deployment
 	- `views.js` :: defines the different kinds of tasks, or, more generally, anything users will engage with on the screen
+    - `custom_views.js` :: (optional) contains custom definitions in case the _babe templates are not enough for your purposes
 	- `trials.js` :: (optional) contains information to realize different trials of a task (e.g., names of pictures, test sentences, questionaire questions etc.)
 
 ## Obtaining the server app

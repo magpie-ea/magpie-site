@@ -12,10 +12,7 @@ section: overview
 
 ### Portable
 
-_babe experiments are based on HTML, CSS and Javascript and
-      so can be executed in any modern browser. This enables researchers to just share a link
-      for anyone to inspect or take part in the experiment. No additional software needs to be
-      installed.
+_babe experiments are based on HTML, CSS and Javascript and so can be executed in any modern browser. This enables researchers to just share a link for anyone to inspect or take part in the experiment.
 
 
 ### Versatile
