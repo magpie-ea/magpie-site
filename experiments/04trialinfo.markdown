@@ -1,34 +1,52 @@
 ---
 layout: experiments
-title: Trial information & randomization
+title: Trial information
 section: experiments
 ---
 
 # {{ page.title }}
 
-Trial information can, for example, be supplied as an array of objects, as in `trial_info/main_trials.js`, the content of which is:
+The file `trials.js` supplies information necessary for the realization of your experiments individual trials. For example, you would specify here which picture to show with which text on the screen to realize a particular experimental condition.
+
+Trial information should be supplied in JSON-format, i.e., as an array of objects, each with the same properties. There can be different such arrays, which is useful if you have different types of trials. For example, the `trials.js`-file from the [Departure Point](https://github.com/babe-project/departure-point) looks like this:
+
 
 ```javascript
-var main_trials = [
-	{question: "How are you today?", 
-	 option1: "fine", 
-	 option2: "great", 
-	 picture: "images/question_mark_01.png"},
-	{question: "What is the weather like?", 
-	 option1: "shiny", 
-	 option2: "rainbow", 
-	 picture: "images/question_mark_02.png"},
-];
+const part_one_trial_info = {
+    forced_choice: [
+        {
+            question: "What's on the bread?",
+            picture: "images/question_mark_02.png",
+            option1: 'jam',
+            option2: 'ham'
+        },
+        {
+            question: "What's the weather like?",
+            picture: "images/weather.jpg",
+            option1: "shiny",
+            option2: "rainbow"
+        }
+    ],
+}
+
+const part_two_trial_info = {
+    multi_dropdown: [
+        {
+            sentence_chunk_1: "Some of the",
+            sentence_chunk_2: "are",
+            sentence_chunk_3: "today.",
+            choice_options_1: ["cats", "dogs"],
+            choice_options_2: ["happy", "hungry", "sad"]
+        },
+        {
+            sentence_chunk_1: "All of the",
+            sentence_chunk_2: "will be",
+            sentence_chunk_3: "tomorrow.",
+            choice_options_1: ["cats", "dogs"],
+            choice_options_2: ["happy", "hungry", "sad"]
+        }
+    ]
+}
 ```
 
-This file defines that there are two types of trials which differ in a number of relevant pieces of information, such as the URL to a picture which will be shown, a question asked and two answer alternatives. If your experiment contains several different types of trials, we recommend supplying their information in separate files, like the minimal template does for practice trials and main trials. There is also the possibility to load trial information from a CSV file and you may also obtain it from a database, using the server app. (INFORMATION TO BE ADDED SOON.)
-
-Normally, we would like to randomize the trial order in some way or other. This is what happens inside of `exp.customize()`, where we have:
-
-```javascript
-this.trial_info.main_trials = _.shuffle(main_trials)
-```
-
-In this way, the main trials are presented in a random order each time the experiment is started anew. The function `_.shuffle()` takes an array as input and returns a shuffled copy of that array. This function comes from the [lodash](https://lodash.com/) library, which is loaded by default. [lodash](https://lodash.com/) provides a number of useful convenience functions.
-
-
+This file defines trial information for two different tasks (more on these in the next section). For each task, there is information for two trials, since the arrays `forced_choice` and `multi_dropdown` have two elements each. For example, for the `forced_choice` task we define a URL for a different picture to show on each trial, as well as different labels for the response options in each trial. For the `multi_dropdown` task we define different stimulus sentence chunks. (How this information is used is easily seen when you just try out the experiment [here](https://departure-point.netlify.com).)

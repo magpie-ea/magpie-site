@@ -7,10 +7,10 @@
     - title: File structure
       slug: 02filestructure
 
-    - title: The "exp" object
+    - title: Initialization
       slug: 03expobject
 
-    - title: Trial information & randomization
+    - title: Trial info
       slug: 04trialinfo
 
     - title: Views
@@ -29,7 +29,6 @@
       slug: 09dynamics
 
     - title: HTML, CSS & JS
-      slug: htmlResources
 
 
 

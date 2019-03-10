@@ -1,43 +1,58 @@
 ---
 layout: experiments
-title: The "exp" object
+title: The `_babe`-object & `main.js`
 section: experiments
 ---
 
 # {{ page.title }}
 
-The main work behind the scenes takes place in the interaction between `scripts/experiment.js` and `scripts/main.js`. The latter shields off convenience functions from the user who does not wish to be bothered (such as rearranging data for submission, finding the next trial/view based on the user's specifications etc.). To customize an experiment, editing `scripts/experiment.js` is necessary, however.
+At the heart of a _babe experiment is a Javascript object called `_babe`. In practice you will usually not interact with this object directly. It is like the theater in which the play is staged; you will normally engage with the actors and the stage but not with the theater itself.
 
-What `script/experiment.js` contributes is the `customize()` function for the `exp`-object. The `exp`-object is the main object that contains all information about how to realize your experiment. It is created automatically in `scripts/main.js`. It collects the data and finally submits it (using function `exp.submit()`; see below). Think of it as an entity which reads information about your trials (e.g., stored in a separate file like `trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
-
-<img src="../images/exp_schema.png" width="100%" >
-
-There are only three required properties of the `exp`-object that the user will normally manipulate inside of the `exp.customize()` function. First, `exp.global_data` is an object which collects all data that is recorded only once. We will usually want to store some information experiment-initially (e.g., starting time, participant info etc.) in this variable. The code below, for instance, stores the experiment start time and the start date.
+The `_babe`-object is created in the file `main.js` by a function called `babeInit()`, which is called automatically when the site has completed loading. The content of your `main.js`-file therefore looks like this:
 
 ```javascript
-// customize the experiment by specifying a view order and a trial structure
-exp.customize = function() {
+// initialises a babe experiment with babeInit
+$("document").ready(function() {
 
-    // record current date and time in global_data
-    this.global_data.startDate = Date();
-    this.global_data.startTime = Date.now();
-	
-    // specify view order
-    this.views_seq = [intro,
-                     instructions,
-                     practice,
-                     beginMainExp,
-                     main,
-                     postTest,
-                     thanks];
+    // calls babeInit
+    babeInit( ... your_babeInit_config_object ... );
+    
+});
 
-    // prepare information about trials (procedure)
-    // randomize main trial order, but keep practice trial order fixed
-    this.trial_info.main_trials = _.shuffle(main_trials)
-    this.trial_info.practice_trials = practice_trials
-	
-};
 ```
 
-Second, there is `exp.views_seq` which is just an array of names of views that are defined in `views/views.js`. Views regulate all visuals and functionality and will be discussed at length below. The order of views in the `exp.views_seq` array defines the basic structure of the experiment. You can have a single view occur several times in this sequence. Third, there is `exp.trial_info` which contains all the information necessary to realize particular views, usually your main trials, giving specific information about which items participants see when. We will look into `exp.trial_info` in more depth next.
+The argument to be passed to `babeInit` is an object which lets you specify the structure of the experiment and its most important properties, such as what to do with the data collected during an execution (save it to a data base, show it on the screen for debugging etc.). To understand this object, it helps to know a bit more about the `_babe`-object itself.
 
+The main job of the `_babe`-object is to realize a sequence of so-called *views*, i.e., parts of the experiment like the introduction, instructions or individual trials, into the right sequence. It makes information about how individual trials are to be realized, i.e., what picture to show or which condition to show, which you supply in file `trials.js` and makes it available to each view. It then collects the data from the execution of the experiment and processes it in the desired way. Schematically, this would look like this:  
+
+<img src="../images/babe_object.png" width="100%" >
+
+In sum, think of a `_babe`-object as an entity which reads information about your trials (e.g., stored in a separate file like `trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
+
+When you initialize an experiment with `babeInit` you need to specify a sequence of views and the *deployment method*. For example, the call to `babeInit` in the [Departure Point](https://github.com/babe-project/departure-point) looks as follows:
+
+
+```javascript
+babeInit({
+    // which views to realize in which sequence
+    views_seq: [
+        intro,
+        instructions,
+        task_one_2AFC,
+        task_two_sentence_completion,
+        instructionsPostTest,
+        post_test,
+        thanks,
+    ],
+    // what to do with the collected data
+    deploy: {
+        experimentID: "INSERT_A_NUMBER",
+        serverAppURL: "SOME-URL",
+        deployMethod: "debug", 
+        contact_email: "YOUREMAIL@wherelifeisgreat.you",
+        prolificURL: "SOME-URL"
+    }
+}
+``` 
+
+The next three section will look at the structure of the `trials.js`-file, the views and the deployment method in more detail. 
