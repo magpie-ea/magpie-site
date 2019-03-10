@@ -37,16 +37,22 @@ Another template view which the Departure Point instantiates is `babeViews.force
 
 ```javascript
 const task_one_2AFC = babeViews.forcedChoice({
-    trials: 2,
+    trials: part_one_trial_info.forced_choice.length,
     name: 'task_one',
     trial_type: '2A_forced_choice',
     data: part_one_trial_info.forced_choice
 });
 ```
 
+We call the constructor function and tell it about the view instance's `name` and `trial_type`. The `trial_type` is the name of that task, as it will show up in the data output. It is a required field. We also supply data via the field `data`. Concretely, we feed the object called `part_one_trial_info.forced_choice` provided in `trials.js` into the view here. We also supply information about how many trials of this view type should be shown subsequently. We set the `trials` field here to the length of the trial data object. (The `trials` field can contain a smaller integer, but supplying a bigger integer will result in an error.)
+
+
+## Custom templates
 
 
 [::: SNIPPETS :::]
 
 You can have a single view occur several times in this sequence. Third, there is `exp.trial_info` which contains all the information necessary to realize particular views, usually your main trials, giving specific information about which items participants see when. We will look into `exp.trial_info` in more depth next.
+
+There are two types of view types: simple and data collecting ... 
 
