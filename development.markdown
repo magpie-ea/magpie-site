@@ -12,6 +12,8 @@ _babe has been developed for open science by open scientists:
 
 [Xiang Ji](https://github.com/x-ji/)
 
+[Jannis Rautenstrauch](https://github.com/JannisBush)
+
 [Michael Franke](http://www.sfs.uni-tuebingen.de/~mfranke/)
 
 _babe has been supported financially by the Priority Program [XPrag.de](http://www.xprag.de/)
