@@ -1,6 +1,6 @@
 ---
 layout: experiments
-title: Views
+title: Configuration
 section: experiments
 ---
 

@@ -16,17 +16,14 @@
     - title: Views
       slug: 05views
 
-    - title: Configuration
-      slug: 06config
+    - title: View sequence
+      slug: 06sequencing
 
-    - title: Counters
-      slug: 07counters
+    - title: Trial randomization
+      slug: 07randomization
 
-    - title: Trial sequencing
-      slug: 08sequencing
-
-    - title: Dynamic data retrieval
-      slug: 09dynamics
+    - title: Deploy configuration
+      slug: 08config
 
     - title: HTML, CSS & JS
       slug: 10htmlResources 
