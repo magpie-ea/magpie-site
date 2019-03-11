@@ -33,7 +33,7 @@ const intro = babeViews.intro({
 
 The constructor function `babeViews.intro()` supplies a view of the type 'intro'. It takes as an argument an object with some required and some optional fields (as described in detail  [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md)). For example, the code above says that this view has one trial: it will be repeated only once before advancing to the next view in the sequence of views. We need to give each view a name, here 'intro', so that we can refer to it from inside the experiment. The fields `text` and `buttonText` can be used to customize the text displayed on the screen and on the button shown. 
 
-Another template view which the Departure Point instantiates is `babeViews.forcedChoice`. Here is the relevant code from `views.js`:
+The 'intro' view is an instance of a so-called *wrapping view*. Wrapping views do not collect data from consecutive trials. That's what *trial views* do. The Departure Point instantiates a template trial view type, namely `babeViews.forcedChoice`. Here is the relevant code from `views.js`:
 
 ```javascript
 const task_one_2AFC = babeViews.forcedChoice({
@@ -44,7 +44,7 @@ const task_one_2AFC = babeViews.forcedChoice({
 });
 ```
 
-We call the constructor function and tell it about the view instance's `name` and `trial_type`. The `trial_type` is the name of that task, as it will show up in the data output. It is a required field. We also supply data via the field `data`. Concretely, we feed the object called `part_one_trial_info.forced_choice` provided in `trials.js` into the view here. We also supply information about how many trials of this view type should be shown subsequently. We set the `trials` field here to the length of the trial data object. (The `trials` field can contain a smaller integer, but supplying a bigger integer will result in an error.)
+We call the constructor function and tell it about the view instance' `name` and `trial_type`. For all trial views, the field `trial_type` is obligatory, as it provides the name of the task as it will show up in the data output. We also supply data via the field `data`. Concretely, we feed the object called `part_one_trial_info.forced_choice` provided in `trials.js` into the view here. We also supply information about how many trials of this view type should be shown subsequently. We set the `trials` field here to the length of the trial data object. (The `trials` field can contain a smaller integer, but supplying a bigger integer will result in an error.)
 
 
 ## Custom templates
