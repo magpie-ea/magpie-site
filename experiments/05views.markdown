@@ -49,4 +49,4 @@ We call the constructor function and tell it about the view instance' `name` and
 
 ## Custom view templates
 
-Trial view types defined in _babe include `forcedChoice`, `sliderRating`, `textboxInput`, `ratingScale`, 
+Trial view types defined in _babe include stuff like `forcedChoice`, `sliderRating`, `textboxInput`, or `ratingScale`. (See [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md) for overview.) It may happen, however, that these templates are not enough for your purposes. For example, the template `dropdownChoice` realizes a view with one drop-down menu for selection. If you need more than one, you can define your own custom view type. The Departure Point defines a custom view type called `multi_dropdown` in file `custom_views.js`. 
