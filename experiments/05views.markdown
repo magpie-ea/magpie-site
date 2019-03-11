@@ -47,12 +47,6 @@ const task_one_2AFC = babeViews.forcedChoice({
 We call the constructor function and tell it about the view instance' `name` and `trial_type`. For all trial views, the field `trial_type` is obligatory, as it provides the name of the task as it will show up in the data output. We also supply data via the field `data`. Concretely, we feed the object called `part_one_trial_info.forced_choice` provided in `trials.js` into the view here. We also supply information about how many trials of this view type should be shown subsequently. We set the `trials` field here to the length of the trial data object. (The `trials` field can contain a smaller integer, but supplying a bigger integer will result in an error.)
 
 
-## Custom templates
+## Custom view templates
 
-
-[::: SNIPPETS :::]
-
-You can have a single view occur several times in this sequence. Third, there is `exp.trial_info` which contains all the information necessary to realize particular views, usually your main trials, giving specific information about which items participants see when. We will look into `exp.trial_info` in more depth next.
-
-There are two types of view types: simple and data collecting ... 
-
+Trial view types defined in _babe include `forcedChoice`, `sliderRating`, `textboxInput`, `ratingScale`, 
