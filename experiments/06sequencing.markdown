@@ -12,9 +12,7 @@ Once you have defined suitable views as the building blocks of your experiment, 
 views_seq: [
     intro,
     instructions,
-    task_one_2AFC,
-    task_two_sentence_completion,
-    instructionsPostTest,
+    forced_choice_2A,
     post_test,
     thanks,
 ]
