@@ -6,7 +6,7 @@ section: experiments
 
 # {{ page.title }}
 
-At the heart of a _babe experiment is a Javascript object called `_babe`. In practice you will usually not interact with this object directly. It is like the theater in which the play is staged; you will normally engage with the actors and the stage but not with the theater itself.
+huhu At the heart of a _babe experiment is a Javascript object called `_babe`. In practice you will usually not interact with this object directly. It is like the theater in which the play is staged; you will normally engage with the actors and the stage but not with the theater itself.
 
 The `_babe`-object is created in the file `main.js` by a function called `babeInit()`, which is called automatically when the site has completed loading. The content of your `main.js`-file therefore looks like this:
 
