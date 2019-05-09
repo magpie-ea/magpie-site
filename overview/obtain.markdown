@@ -24,13 +24,13 @@ Creating a browser-based experiment with _babe does not require installation of 
 
 ### Changing the `departure point` to your own experiment
 
-- you can find more general explanations of the elements relevant for setting up a _babe experiment [here](https://github.com/babe-project/babe-project#Usage)
-
-- usually, you might just want to manipulate the following files:
-	- `main.js` :: contains the experiment structure and general information about deployment
-	- `views.js` :: defines the different kinds of tasks, or, more generally, anything users will engage with on the screen
-    - `custom_views.js` :: (optional) contains custom definitions in case the _babe templates are not enough for your purposes
-	- `trials.js` :: (optional) contains information to realize different trials of a task (e.g., names of pictures, test sentences, questionaire questions etc.)
+- Usually, you might just want to manipulate the following files:
+	- `01_custom_functions.js` :: (optional) contains custom functions, variables and hooks (e.g. a global coin flip)
+	- `02_custom_views_templates.js` :: (optional) contains user-defined special-purpose view templates (only needed, if the provided view templates are not enough for your experiment)
+	- `03_trials.js` :: (optional) contains the data of different trials of a task (e.g., names of pictures, test sentences, questions, etc.)
+	- `04_views.js` :: defines the different kinds of tasks, or, more generally, anything users will engage with on the screen
+	- `05_main.js` :: contains the experiment structure and general information about deployment
+- The numbering of the files is important, you can use the functions defined in `01` in `04`, but you can't use some variable from `05` in `02`
 
 ## Obtaining the server app
 

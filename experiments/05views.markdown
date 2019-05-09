@@ -6,19 +6,17 @@ section: experiments
 
 # {{ page.title }}
 
-[::: THIS PAGE IS STILL UNDER CONSTRUCTION :::]
-
 Views are the main building blocks of a _babe experiment. A view regulates what participants see on the screen and how they can respond to what they see. 
 
 We distinguish *view types* and *view instances*. Your experiment will be a sequence of view instances. Each view instance is of exactly one view type. The view type regulates the basic look-and-behavior; the instance fills it with life (e.g., supplying the information in `trials.js`). 
 
 There are two kinds of view types. *Template view types* are ready-made view types supplied by _babe. You can use instances of these if they fit your purpose well enough. Instances of template view types allow for moderate customization. *Custom view types* are view types that you define when the template view types do not provide what is relevant for you. 
 
-The Departure Point uses a bunch of template views, but also defines one custom view. Template views are instantiated in the file `views.js` and the custom view type `multi_dropdown` is defined and instantiated in `custom_views.js`. They give you full control over layout and functionality, but also require more work.
+The Departure Point uses a bunch of template views, but no customization (see the [documentation](https://babe-project.github.io/babe-docs/) for examples of customized template views and fully customized views.) All views are instantiated in the file `views.js`.
 
 ## Template view types
 
-_babe provides a number of ready-made template view types. They are accessible via the `babeViews` object. An overview is [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md). For example, the Departure Point defines an instance of the template type `intro` in the file `views.js` like so:
+_babe provides a number of ready-made template view types. They are accessible via the `babeViews` object. An overview of available templates is in the  [documentation](https://babe-project.github.io/babe-docs/). For example, the Departure Point defines an instance of the template type `intro` in the file `views.js` like so:
 
 ```javascript
 // defines a view instance of view template 'intro'
@@ -31,15 +29,15 @@ const intro = babeViews.intro({
 
 ```
 
-The constructor function `babeViews.intro()` supplies a view of the type 'intro'. It takes as an argument an object with some required and some optional fields (as described in detail  [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md)). For example, the code above says that this view has one trial: it will be repeated only once before advancing to the next view in the sequence of views. We need to give each view a name, here 'intro', so that we can refer to it from inside the experiment. The fields `text` and `buttonText` can be used to customize the text displayed on the screen and on the button shown. 
+The constructor function `babeViews.intro()` supplies a view of the type 'intro'. It takes as an argument an object with some required and some optional fields (as described in detail in the [documentation](https://babe-project.github.io/babe-docs/)). For example, the code above says that this view has one trial: it will be repeated only once before advancing to the next view in the sequence of views. We need to give each view a name, here 'intro', so that we can refer to it from inside the experiment. The fields `text` and `buttonText` can be used to customize the text displayed on the screen and on the button shown. 
 
 The 'intro' view is an instance of a so-called *wrapping view*. Wrapping views do not collect data from consecutive trials. That's what *trial views* do. The Departure Point instantiates a template trial view type, namely `babeViews.forcedChoice`. Here is the relevant code from `views.js`:
 
 ```javascript
-const task_one_2AFC = babeViews.forcedChoice({
+const forced_choice_2A = babeViews.forcedChoice({
     trials: trial_info.forced_choice.length,
-    name: 'task_one',
-    trial_type: '2A_forced_choice',
+    name: 'forced_choice_2A',
+    trial_type: 'forced_choice_2A',
     data: trial_info.forced_choice
 });
 ```
