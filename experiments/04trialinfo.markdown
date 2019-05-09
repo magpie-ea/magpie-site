@@ -12,7 +12,7 @@ Trial information should be supplied in JSON-format, i.e., as an array of object
 
 
 ```javascript
-const part_one_trial_info = {
+const trial_info = {
     forced_choice: [
         {
             question: "What's on the bread?",
@@ -26,8 +26,8 @@ const part_one_trial_info = {
             option1: "shiny",
             option2: "rainbow"
         }
-    ]
-}
+    ],
+};
 ```
 
 This file defines trial information for a forced choice task (more on these in the next section). There is information for two trials, since the array `forced_choice` has two elements each. For example, we define a URL for a different picture to show on each trial, as well as different labels for the response options in each trial. (How this information is used is easily seen when you just try out the experiment [here](https://departure-point.netlify.com).)
