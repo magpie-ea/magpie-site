@@ -37,16 +37,16 @@ The 'intro' view is an instance of a so-called *wrapping view*. Wrapping views d
 
 ```javascript
 const task_one_2AFC = babeViews.forcedChoice({
-    trials: part_one_trial_info.forced_choice.length,
+    trials: trial_info.forced_choice.length,
     name: 'task_one',
     trial_type: '2A_forced_choice',
-    data: part_one_trial_info.forced_choice
+    data: trial_info.forced_choice
 });
 ```
 
 We call the constructor function and tell it about the view instance' `name` and `trial_type`. For all trial views, the field `trial_type` is obligatory, as it provides the name of the task as it will show up in the data output. We also supply data via the field `data`. Concretely, we feed the object called `part_one_trial_info.forced_choice` provided in `trials.js` into the view here. We also supply information about how many trials of this view type should be shown subsequently. We set the `trials` field here to the length of the trial data object. (The `trials` field can contain a smaller integer, but supplying a bigger integer will result in an error.)
 
 
-## Custom view templates
+<!-- ## Custom view templates -->
 
-Trial view types defined in _babe include stuff like `forcedChoice`, `sliderRating`, `textboxInput`, or `ratingScale`. (See [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md) for overview.) It may happen, however, that these templates are not enough for your purposes. For example, the template `dropdownChoice` realizes a view with one drop-down menu for selection. If you need more than one, you can define your own custom view type. The Departure Point defines a custom view type called `multi_dropdown` in file `custom_views.js`. 
+<!-- Trial view types defined in _babe include stuff like `forcedChoice`, `sliderRating`, `textboxInput`, or `ratingScale`. (See [here](https://github.com/babe-project/babe-project/blob/master/docs/views.md) for overview.) It may happen, however, that these templates are not enough for your purposes. For example, the template `dropdownChoice` realizes a view with one drop-down menu for selection. If you need more than one, you can define your own custom view type. The Departure Point defines a custom view type called `multi_dropdown` in file `custom_views.js`.  -->
