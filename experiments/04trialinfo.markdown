@@ -26,27 +26,8 @@ const part_one_trial_info = {
             option1: "shiny",
             option2: "rainbow"
         }
-    ],
-}
-
-const part_two_trial_info = {
-    multi_dropdown: [
-        {
-            sentence_chunk_1: "Some of the",
-            sentence_chunk_2: "are",
-            sentence_chunk_3: "today.",
-            choice_options_1: ["cats", "dogs"],
-            choice_options_2: ["happy", "hungry", "sad"]
-        },
-        {
-            sentence_chunk_1: "All of the",
-            sentence_chunk_2: "will be",
-            sentence_chunk_3: "tomorrow.",
-            choice_options_1: ["cats", "dogs"],
-            choice_options_2: ["happy", "hungry", "sad"]
-        }
     ]
 }
 ```
 
-This file defines trial information for two different tasks (more on these in the next section). For each task, there is information for two trials, since the arrays `forced_choice` and `multi_dropdown` have two elements each. For example, for the `forced_choice` task we define a URL for a different picture to show on each trial, as well as different labels for the response options in each trial. For the `multi_dropdown` task we define different stimulus sentence chunks. (How this information is used is easily seen when you just try out the experiment [here](https://departure-point.netlify.com).)
+This file defines trial information for a forced choice task (more on these in the next section). There is information for two trials, since the array `forced_choice` has two elements each. For example, we define a URL for a different picture to show on each trial, as well as different labels for the response options in each trial. (How this information is used is easily seen when you just try out the experiment [here](https://departure-point.netlify.com).)

@@ -23,11 +23,11 @@ $("document").ready(function() {
 
 The argument to be passed to `babeInit` is an object which lets you specify the structure of the experiment and its most important properties, such as what to do with the data collected during an execution (save it to a data base, show it on the screen for debugging etc.). To understand this object, it helps to know a bit more about the `_babe`-object itself.
 
-The main job of the `_babe`-object is to realize a sequence of so-called *views*, i.e., parts of the experiment like the introduction, instructions or individual trials, into the right sequence. It makes information about how individual trials are to be realized, i.e., what picture to show or which condition to show, which you supply in file `trials.js` and makes it available to each view. It then collects the data from the execution of the experiment and processes it in the desired way. Schematically, this would look like this:  
+The main job of the `_babe`-object is to realize a sequence of so-called *views*, i.e., parts of the experiment like the introduction, instructions or individual trials, into the right sequence. It makes information about how individual trials are to be realized, i.e., what picture to show or which condition to show, which you supply in file `03_trials.js` and makes it available to each view. It then collects the data from the execution of the experiment and processes it in the desired way. Schematically, this would look like this:  
 
 <img src="../images/babe_object.png" width="100%" >
 
-In sum, think of a `_babe`-object as an entity which reads information about your trials (e.g., stored in a separate file like `trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
+In sum, think of a `_babe`-object as an entity which reads information about your trials (e.g., stored in a separate file like `03_trial_info.js`), realizes an experimental structure as a sequence of **views** (see below), collects your data (in variables `trial_data` and `global_data`) and finally submits it.
 
 When you initialize an experiment with `babeInit` you need to specify a sequence of views and the *deployment method*. For example, the call to `babeInit` in the [Departure Point](https://github.com/babe-project/departure-point) looks as follows:
 
@@ -38,9 +38,7 @@ babeInit({
     views_seq: [
         intro,
         instructions,
-        task_one_2AFC,
-        task_two_sentence_completion,
-        instructionsPostTest,
+        forced_choice_2A,
         post_test,
         thanks,
     ],
@@ -55,4 +53,4 @@ babeInit({
 }
 ``` 
 
-The next three section will look at the structure of the `trials.js`-file, the views and the deployment method in more detail. 
+The next three section will look at the structure of the `03_trials.js`-file, the views and the deployment method in more detail. 
