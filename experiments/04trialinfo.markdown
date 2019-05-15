@@ -6,9 +6,9 @@ section: experiments
 
 # {{ page.title }}
 
-The file `trials.js` supplies information necessary for the realization of your experiments individual trials. For example, you would specify here which picture to show with which text on the screen to realize a particular experimental condition.
+The file `04_trials.js` supplies information necessary for the realization of your experiments individual trials. For example, you would specify here which picture to show with which text on the screen to realize a particular experimental condition.
 
-Trial information should be supplied in JSON-format, i.e., as an array of objects, each with the same properties. There can be different such arrays, which is useful if you have different types of trials. For example, the `trials.js`-file from the [Departure Point](https://github.com/babe-project/departure-point) looks like this:
+Trial information should be supplied in JSON-format, i.e., as an array of objects, each with the same properties. There can be different such arrays, which is useful if you have different types of trials. For example, the `04_trials.js`-file from the [Departure Point](https://github.com/babe-project/departure-point) looks like this:
 
 
 ```javascript
