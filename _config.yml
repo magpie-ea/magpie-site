@@ -3,8 +3,8 @@ permalink: none
 kramdown:
   input: GFM
   hard_wrap: false
-baseurl: "/babe_site"
-url: "https://babe-project.github.io/babe_site"
+baseurl: "/magpie-site"
+url: "https://magpie-ea.github.io/magpie-site"
 plugins:
   - jemoji
   - jekyll-sitemap

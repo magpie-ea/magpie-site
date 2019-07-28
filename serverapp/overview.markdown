@@ -7,7 +7,7 @@ section: serverapp
 
 # {{ page.title }}
 
-The _babe server app helps you store data from your experiments. You must install the server
+The _magpie server app helps you store data from your experiments. You must install the server
 app once before you can collect data. You can install it locally on your computer, e.g., for
 use in a laboratory or in field experiments. This is useful when you do not have internet
 connection during data collection. You can also install an online server version, which allows

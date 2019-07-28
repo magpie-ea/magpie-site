@@ -1,8 +1,8 @@
-# babe_site
+# magpie-site
 
-Website with documentation for _babe (basic architecture for browser-based experiments). See the actual website here:
+Website with documentation for _magpie (minimal architecture for the generation of portable interactive experiments). See the actual website here:
 
-https://babe-project.github.io/babe_site/index.html
+https://magpie-ea.github.io/magpie-site/index.html
 
 This site is based on [Jekyll](https://jekyllrb.com/). If you download and run this site locally, use:
 

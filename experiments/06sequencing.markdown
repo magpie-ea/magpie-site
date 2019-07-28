@@ -6,7 +6,7 @@ section: experiments
 
 # {{ page.title }}
 
-Once you have defined suitable views as the building blocks of your experiment, you want to arrange them in the order that they should show up each time the experiment is instantiated. In the simplest case, you would just provide a simple linear structure, like in the [Departure Point](https://github.com/babe-project/departure-point):
+Once you have defined suitable views as the building blocks of your experiment, you want to arrange them in the order that they should show up each time the experiment is instantiated. In the simplest case, you would just provide a simple linear structure, like in the [Departure Point](https://github.com/magpie-ea/magpie-departure-point):
 
 ```javascript
 views_seq: [
@@ -18,7 +18,7 @@ views_seq: [
 ]
 ```
 
-But more advanced, sequencing of views can also be realized. Suppose you have an experiment where a sequence of views is to be repeated many times in a loop. For example, your main trials could consist of three types of displays: (i) get ready, (ii) do task and (iii) receive feedback. To implement this, _babe supplies a convenience function `loop(array, count)` which you can use in `babeInit()` when you supply a view sequence. You could then write code like this:
+But more advanced, sequencing of views can also be realized. Suppose you have an experiment where a sequence of views is to be repeated many times in a loop. For example, your main trials could consist of three types of displays: (i) get ready, (ii) do task and (iii) receive feedback. To implement this, _magpie supplies a convenience function `loop(array, count)` which you can use in `magpieInit()` when you supply a view sequence. You could then write code like this:
 
 ```javascript
 views_seq = [intro,

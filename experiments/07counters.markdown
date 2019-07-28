@@ -6,9 +6,9 @@ section: experiments
 
 # {{ page.title }}
 
-The sequence of views for an experiment is specified by the user in `exp.customize()`. The number of trials in each view are specified by the key `trials` of that view-object. On top of this, the user can specify loops of sequences (see below). To realize this, _babe uses a system of counters. It is good to understand the counter system for more advanced applications.
+The sequence of views for an experiment is specified by the user in `exp.customize()`. The number of trials in each view are specified by the key `trials` of that view-object. On top of this, the user can specify loops of sequences (see below). To realize this, _magpie uses a system of counters. It is good to understand the counter system for more advanced applications.
 
-When a trial is finished _babe calls the function `exp.findNextView()`, which is defined in `main.js`, to decide what to show next in the sequence of views and trials. To do this, the `exp`-object has a property `exp.currentView` which just points to the current view-object. The `exp`-object also has two important counters, namely:
+When a trial is finished _magpie calls the function `exp.findNextView()`, which is defined in `main.js`, to decide what to show next in the sequence of views and trials. To do this, the `exp`-object has a property `exp.currentView` which just points to the current view-object. The `exp`-object also has two important counters, namely:
 
 + `exp.currentTrialCounter`: counts how many trials have passed during the whole experiment in total
 

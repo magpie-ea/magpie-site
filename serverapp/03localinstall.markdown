@@ -20,14 +20,14 @@ Note:
 
 Once you have Docker installed, follow these steps:
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/babe-project/BABE.git` or `git clone git@github.com:babe-project/BABE.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/magpie-ea/magpie-backend.git` or `git clone git@github.com:magpie-ea/magpie-backend.git`.
 
 3. Open a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows), `cd` into the project directory just cloned via git.
 
 4. For the first-time setup, run in the terminal
   ```
-  docker volume create --name babe-app-volume -d local
-  docker volume create --name babe-db-volume -d local
+  docker volume create --name magpie-app-volume -d local
+  docker volume create --name magpie-db-volume -d local
   docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
   ```
 
@@ -35,7 +35,7 @@ Once you have Docker installed, follow these steps:
 
 After first-time installation, you can launch a local server instance which allows you to manage the experiments in your browser and stores the results.
 
-1. Run `docker-compose up` to launch the application every time you want to run the server. Wait until the line `web_1  | [info] Running BABE.Endpoint with Cowboy using http://0.0.0.0:4000` appears in the terminal.
+1. Run `docker-compose up` to launch the application every time you want to run the server. Wait until the line `web_1  | [info] Running magpie-backend.Endpoint with Cowboy using http://0.0.0.0:4000` appears in the terminal.
 
 2. Visit `localhost:4000` in your browser. You should see the server up and running.
 
@@ -43,4 +43,4 @@ After first-time installation, you can launch a local server instance which allo
 
 3. Use <kbd>Ctrl + C</kbd> to shut down the server.
 
-Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/babe-db-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.
+Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/magpie-db-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.

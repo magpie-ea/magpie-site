@@ -9,7 +9,7 @@ section: experiments
 In the Departure Point example, trials for the first part (forced choice) are presented in a fixed order: every participant will always see the trials in exactly the order defined in `trials.js`. This is because we supplied the trial data like so in the file `views.js`:
 
 ```javascript
-const task_one_2AFC = babeViews.forcedChoice({
+const task_one_2AFC = magpieViews.forcedChoice({
     (...)
     data: part_one_trial_info.forced_choice
 });
@@ -18,7 +18,7 @@ const task_one_2AFC = babeViews.forcedChoice({
 Often, we would like to randomize the trial order in some way or other. One simple way of doing this is to present trials in an entirely random sequence for each realization of the experiment. This could realized like so:
 
 ```javascript
-const task_one_2AFC = babeViews.forcedChoice({
+const task_one_2AFC = magpieViews.forcedChoice({
     (...)
     data: _.shuffle(part_one_trial_info.forced_choice)
 });

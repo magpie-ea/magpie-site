@@ -8,17 +8,17 @@ section: overview
 
 ## Quick start to program an experiment
 
-Creating a browser-based experiment with _babe does not require installation of fancy software. You basically only need a recent browser and a text editor, as well as [npm](https://www.npmjs.com/get-npm). A good way to start is by downloading the the [departure point](https://github.com/babe-project/departure-point), and then modifying it into the desired shape. Here's how to do this, step-by-step.
+Creating a browser-based experiment with _magpie does not require installation of fancy software. You basically only need a recent browser and a text editor, as well as [npm](https://www.npmjs.com/get-npm). A good way to start is by downloading the the [departure point](https://github.com/magpie-ea/magpie-departure-point), and then modifying it into the desired shape. Here's how to do this, step-by-step.
 
 ### Obtaining the `departure point`
 
 1. if you don't have it already, install npm by following these [instructions](https://www.npmjs.com/get-npm)
-2. download or clone this github repository: [https://github.com/babe-project/departure-point](https://github.com/babe-project/departure-point)
-   - e.g. type `git clone https://github.com/babe-project/departure-point.git`
-3. change the folder name `departure-point` to whatever you like
-   - let's say you call is `my-exp`, e.g. by typing `mv departure-point my-exp`
+2. download or clone this github repository: [https://github.com/magpie-ea/magpie-departure-point](https://github.com/magpie-ea/magpie-departure-point)
+   - e.g. type `git clone https://github.com/magpie-ea/magpie-departure-point.git`
+3. change the folder name `magpie-departure-point` to whatever you like
+   - let's say you call is `my-exp`, e.g. by typing `mv magpie-departure-point my-exp`
 4. go to your folder `my-exp`, e.g., by typing `cd my-exp`
-5. now type `npm install`; this will download the Javascript packages with the most current version of _babe
+5. now type `npm install`; this will download the Javascript packages with the most current version of _magpie
 6. you can have a look at the example experiment by opening the file `index.html` now
 7. you can now start editing to create your own experiment
 
@@ -34,4 +34,4 @@ Creating a browser-based experiment with _babe does not require installation of 
 
 ## Obtaining the server app
 
-If you want to use the _babe server app, either locally on your computer or on a server, you should follow the detailed [installation instructions in the docs](../serverapp/overview.html).
+If you want to use the _magpie server app, either locally on your computer or on a server, you should follow the detailed [installation instructions in the docs](../serverapp/overview.html).

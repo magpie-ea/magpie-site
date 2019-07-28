@@ -13,13 +13,13 @@ There are several ways in which experiments can be deployed.
 
 ### Frontend configuration
 
-By default, _babe relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [Netlify](https://www.netlify.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
+By default, _magpie relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [Netlify](https://www.netlify.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
 
 To deploy an experiment via Github Pages:
-1. make sure that the experiment repo is already on Github, e.g. https://github.com/babe-project/MinimalTemplate
-2. Go to "Settings" tab of the repo, e.g. https://github.com/babe-project/MinimalTemplate/settings
+1. make sure that the experiment repo is already on Github, e.g. https://github.com/magpie-ea/MinimalTemplate
+2. Go to "Settings" tab of the repo, e.g. https://github.com/magpie-ea/MinimalTemplate/settings
 3. Scroll down to find the section titled "GitHub Pages". Under "Source", choose "master branch" and click on save.
-4. The experiment should now be available at your-account.github.io/ExperimentName, e.g. https://babe-project.github.io/MinimalTemplate/
+4. The experiment should now be available at your-account.github.io/ExperimentName, e.g. https://magpie-ea.github.io/MinimalTemplate/
 
 <!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise Github Pages will not be able to serve the experiment correctly. -->
 
@@ -35,7 +35,7 @@ var config_deploy = {
 ```
 
 ### Backend configuration
-After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _babe is available at https://github.com/babe-project/BABE. You may refer to its documentation for details. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). A demo app is deployed on Heroku at [https://babe-demo.herokuapp.com/](https://babe-demo.herokuapp.com/).
+After an experiment is finished online, the results need to be stored and retrieved later. A server is needed for that purpose. The default server implementation for _magpie is available at https://github.com/magpie-ea/magpie-backend. You may refer to its documentation for details. It is based on [Phoenix Framework](http://phoenixframework.org/) and written in [Elixir](https://elixir-lang.org/). A demo app is deployed on Heroku at [https://magpie-demo.herokuapp.com/](https://magpie-demo.herokuapp.com/).
 
 In the current version of the server app, each experiment is explicitly created and managed with a user interface. After creation, each experiment gets assigned a unique ID. Experiment results need to be submitted with [HTTP POST](https://en.wikipedia.org/wiki/HTTP_POST) in [JSON format](https://en.wikipedia.org/wiki/JSON) to the endpoint displayed in the UI:
 

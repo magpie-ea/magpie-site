@@ -1,6 +1,6 @@
 ## Response type template
 
-The [response type template](https://github.com/babe-project/ResponseTypeTemplate) offers a number of different ways to obtain user reactions, such
+The [response type template](https://github.com/magpie-ea/ResponseTypeTemplate) offers a number of different ways to obtain user reactions, such
 as:
 
 - binary forced-choice task

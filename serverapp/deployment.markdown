@@ -17,7 +17,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoeni
 
 1. Ensure that you have a [Heroku account](https://signup.heroku.com/) already, and have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and working on your computer.
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone this git repo with `git clone https://github.com/babe-project/BABE` or `git clone git@github.com:babe-project/BABE.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone this git repo with `git clone https://github.com/magpie-ea/magpie-backend` or `git clone git@github.com:magpie-ea/magpie-backend.git`.
 
 3. `cd` into the project directory just cloned from your Terminal (or cmd.exe on Windows).
 
@@ -29,7 +29,7 @@ There is an [official guide](https://hexdocs.pm/phoenix/heroku.html) from Phoeni
 
 6. You may want to change the application name instead of using the default name. In that case, run `heroku apps:rename newname`.
 
-7. Edit line 17 of the file `config/prod.exs`. Replace the part `babe-backend.herokuapp.com` after `host` with the app name (shown when you first ran `heroku create`, e.g. `mysterious-meadow-6277.herokuapp.com`, or the app name that you set at step 6, e.g.  `newname.herokuapp.com`). You shouldn't need to modify anything else.
+7. Edit line 17 of the file `config/prod.exs`. Replace the part `magpie-backend.herokuapp.com` after `host` with the app name (shown when you first ran `heroku create`, e.g. `mysterious-meadow-6277.herokuapp.com`, or the app name that you set at step 6, e.g.  `newname.herokuapp.com`). You shouldn't need to modify anything else.
 
 8. Ensure that you're at the top-level project directory. Run
 
@@ -69,14 +69,14 @@ The following steps require an internet connection. After they are finished, the
   - Although the Docker app on Windows and Mac asks for login credentials to Docker Hub, they are not needed for local deployment . You can proceed without creating any Docker account/logging in.
   - Linux users would need to install `docker-compose` separately. See relevant instructions at https://docs.docker.com/compose/install/.
 
-2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/babe-project/BABE.git` or `git clone git@github.com:babe-project/BABE.git`.
+2. Ensure you have [Git](https://git-scm.com/downloads) installed. Clone the server repo with `git clone https://github.com/magpie-ea/magpie-backend.git` or `git clone git@github.com:magpie-ea/magpie-backend.git`.
 
 3. Open a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows), `cd` into the project directory just cloned via git.
 
 4. For the first-time setup, run in the terminal
   ```
-  docker volume create --name babe-app-volume -d local
-  docker volume create --name babe-db-volume -d local
+  docker volume create --name magpie-app-volume -d local
+  docker volume create --name magpie-db-volume -d local
   docker-compose run --rm web bash -c "mix deps.get && npm install && node node_modules/brunch/bin/brunch build && mix ecto.migrate"
   ```
 
@@ -84,7 +84,7 @@ The following steps require an internet connection. After they are finished, the
 
 After first-time installation, you can launch a local server instance which sets up the experiment in your browser and stores the results.
 
-1. Run `docker-compose up` to launch the application every time you want to run the server. Wait until the line `web_1  | [info] Running BABE.Endpoint with Cowboy using http://0.0.0.0:4000` appears in the terminal.
+1. Run `docker-compose up` to launch the application every time you want to run the server. Wait until the line `web_1  | [info] Running magpie-backend.Endpoint with Cowboy using http://0.0.0.0:4000` appears in the terminal.
 
 2. Visit `localhost:4000` in your browser. You should see the server up and running.
 
@@ -92,5 +92,5 @@ After first-time installation, you can launch a local server instance which sets
 
 3. Use <kbd>Ctrl + C</kbd> to shut down the server.
 
-Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/babe-db-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.
+Note that the database for storing experiment results is stored at `/var/lib/docker/volumes/magpie-db-volume/_data` folder by default. As long as this folder is preserved, experiment results should persist as well.
 

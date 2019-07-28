@@ -1,6 +1,6 @@
 ---
 layout: overview
-title: Friends of _babe
+title: Friends of _magpie
 section: overview
 ---
 
@@ -10,11 +10,11 @@ section: overview
 
   
 
-If _babe is not your taste, there are great alternatives. Check them out to see what's best for you.
+If _magpie is not your taste, there are great alternatives. Check them out to see what's best for you.
 
 ### PsiTurk
 
-<a href="https://psiturk.org/">psiTurk</a> is a great platform for developing and running online experiments with Amazon's MechanicalTurk. _babe is heavily inspired by psiTurk, but developed a life of its own because psiTurk is not as flexible (being tied to MTurk) and portable (requiring researcher to view your experiment through a python application). On the other hand, psiTurk is the basis for <a href="https://github.com/Dallinger/Dallinger">Dallinger</a> which provides a mind-blowing framework for running difficult experimental designs with multiple participants or chains of dependent experiments (such as in cultural evolution experiments).
+<a href="https://psiturk.org/">psiTurk</a> is a great platform for developing and running online experiments with Amazon's MechanicalTurk. _magpie is heavily inspired by psiTurk, but developed a life of its own because psiTurk is not as flexible (being tied to MTurk) and portable (requiring researcher to view your experiment through a python application). On the other hand, psiTurk is the basis for <a href="https://github.com/Dallinger/Dallinger">Dallinger</a> which provides a mind-blowing framework for running difficult experimental designs with multiple participants or chains of dependent experiments (such as in cultural evolution experiments).
 
 
 ### LabVanced

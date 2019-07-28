@@ -11,4 +11,4 @@ The participant presses the space bar whenever their target (one of the two stim
 - **Discrimination task:**
 The participant presses the F key on the keyboard when there is one of the stimuli and the J key when there is the other one of the stimuli on the screen. In this task, the participant is expected to respond discriminately to the target with the corresponding key press. Reaction time and the response accuracy of participant is also recorded.
 
-The code for this experiment can be downloaded from the <a href="https://github.com/babe-project/MentalChronometry" title="MentalChronometry" target="_blank"> MentalChronometry repository.</a>
+The code for this experiment can be downloaded from the <a href="https://github.com/magpie-ea/MentalChronometry" title="MentalChronometry" target="_blank"> MentalChronometry repository.</a>
