@@ -7,4 +7,4 @@ section: experiments
 
 # {{ page.title }}
 
-This guide walks through the basics of a _magpie experiment. It is based on the Departure Point, a minimal example, which you can [obtain here](https://github.com/magpie-ea/magpie-departure-point) and [try out here](https://magpie-departure-point.netlify.com). The Departure Point is useful as a starting point for your own experiments.
+This guide walks through the basics of a _magpie experiment. It is based on the Departure Point, a minimal example, which you can [obtain here](https://github.com/magpie-ea/magpie-departure-point) and [try out here](https://departure-point.netlify.com). The Departure Point is useful as a starting point for your own experiments.
