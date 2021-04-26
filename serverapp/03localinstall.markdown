@@ -10,7 +10,7 @@ The first-time installation requires an internet connection. After it is finishe
 
 (Note that for local deployment, the default username is `default` and the default password is `password`. You can change them in `config/dev.exs`.)
 
-### First time installation
+### First-time installation
 
 To begin with, install Docker from [https://docs.docker.com/install/](https://docs.docker.com/install/). You may have to launch the application once in order to let it install its command line tools. Verify the installation by typing `docker version` in a terminal (e.g., the Terminal app on MacOS or cmd.exe on Windows).
 

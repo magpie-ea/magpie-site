@@ -13,15 +13,15 @@ There are several ways in which experiments can be deployed.
 
 ### Frontend configuration
 
-By default, _magpie relies on [Github Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [Netlify](https://www.netlify.com/) or [Gitlab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
+By default, _magpie relies on [GitHub Pages](https://pages.github.com/) to make experiments accessible online. However, you may choose to use any static website host, such as [Netlify](https://www.netlify.com/) or [GitLab Pages](https://about.gitlab.com/features/pages/) or even your own server, since in essence the experiments are composed of plain HTML/JS/CSS files.
 
-To deploy an experiment via Github Pages:
-1. make sure that the experiment repo is already on Github, e.g. https://github.com/magpie-ea/MinimalTemplate
-2. Go to "Settings" tab of the repo, e.g. https://github.com/magpie-ea/MinimalTemplate/settings
+To deploy an experiment via GitHub Pages:
+1. Make sure that the experiment repo is already on GitHub, e.g. https://github.com/magpie-ea/MinimalTemplate
+2. Go to the "Settings" tab of the repo, e.g. https://github.com/magpie-ea/MinimalTemplate/settings
 3. Scroll down to find the section titled "GitHub Pages". Under "Source", choose "master branch" and click on save.
 4. The experiment should now be available at your-account.github.io/ExperimentName, e.g. https://magpie-ea.github.io/MinimalTemplate/
 
-<!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise Github Pages will not be able to serve the experiment correctly. -->
+<!--- Make sure that the entry point of the experiment is named `index.html`. Otherwise GitHub Pages will not be able to serve the experiment correctly. -->
 
 #### Crowdsourcing (MTurk, Prolific) or direct link?
 You might recruit participants via [Amazon Mechanical Turk](https://www.mturk.com/), [Prolific](https://www.prolific.ac/), or by directly sending the link to them. Please change the `config/config_deploy.js` in the experiment directory accordingly, and then push the changes via git:
@@ -51,13 +51,13 @@ var config_deploy = {
 }
 ```
 
-You are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](../serverapp/02serverinstall.html)
+You are recommended to deploy your own server instance, either with Heroku or with other hosting services you see fit. The detailed deployment instructions for Heroku can be found [here](../serverapp/02serverinstall.html).
 
 ## Deploying an experiment locally
 Sometimes you may want to let the participants complete an experiment directly on a local machine without requiring internet connection. This is particularly useful for doing fieldwork or working in labs.
 
 ### Frontend configuration
-The only change needed should be in `config/config_deploy.js`
+The only change needed should be in `config/config_deploy.js`.
 
 ```javascript
 var config_deploy = {
@@ -92,6 +92,3 @@ var config_deploy = {
 in the `config/config_deploy.js` file in your experiment directory.
 
 You can then test the experiment by opening `index.html` in the browser in your local machine.
-
-
-
