@@ -1,6 +1,6 @@
 ---
 layout: experiments
-title: Deploy configuation
+title: Deploy configuration
 section: experiments
 ---
 
@@ -26,5 +26,3 @@ Every experiment needs information about **deployment**. Deployment is the way i
 ```
 
 The most important field is `deployMethod`. When you develop your experiment, you will initially only use the `debug` deployment method, which shows the final data as a table on the screen. Information about other means of and ways of collecting data via crowd-sourcing platforms like Amazon's Mechanical Turk or Prolific are provided in the [docs](https://magpie-ea.github.io/magpie-docs/03_deploying_experiments/01_configuration/).
-
-
