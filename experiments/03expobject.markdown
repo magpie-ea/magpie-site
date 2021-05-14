@@ -1,6 +1,6 @@
 ---
 layout: experiments
-title: The `_magpie`-object & `05_main.js`
+title: The `_magpie`-object & `06_main.js`
 section: experiments
 ---
 
