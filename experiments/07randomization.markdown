@@ -6,7 +6,7 @@ section: experiments
 
 # {{ page.title }}
 
-In the Departure Point example, trials for the first part (forced choice) are presented in a fixed order: every participant will always see the trials in exactly the order defined in `trials.js`. This is because we supplied the trial data like so in the file `views.js`:
+In the Departure Point example, trials for the first part (forced choice) are presented in a fixed order: every participant will always see the trials in exactly the order defined in `04_trials.js`. This is because we supplied the trial data like so in the file `05_views.js`:
 
 ```javascript
 const task_one_2AFC = magpieViews.forcedChoice({
