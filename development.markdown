@@ -14,7 +14,7 @@ _magpie has been developed for open science by open scientists:
 
 [Jannis Rautenstrauch](https://github.com/JannisBush)
 
-[Michael Franke](http://www.sfs.uni-tuebingen.de/~mfranke/)
+[Michael Franke](https://www.home.uni-osnabrueck.de/michfranke/index.html)
 
 _magpie has been supported financially by the Priority Program [XPrag.de](http://www.xprag.de/)
 (DFG Schwerpunktprogramm 1727) and the [SFB 833 *Constitution of Meaning*](http://www.sfb833.uni-tuebingen.de/).
